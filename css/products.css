@@ -1,0 +1,504 @@
+/* ============================================
+   세한메카트로닉스 — 제품 페이지 (Panasonic 용접로봇)
+   Technical brochure · Compact · Trust-focused
+   ============================================ */
+
+.shm-products-page {
+  --shm-bg: #F4F7FA;
+  --shm-bg-alt: #F7F9FC;
+  --shm-card: #FFFFFF;
+  --shm-primary: #17385F;
+  --shm-accent: #1F6FEB;
+  --shm-text: #1A2B3C;
+  --shm-text-muted: #4A5D73;
+  --shm-line: #E1E7EF;
+  --shm-radius: 8px;
+  background: var(--shm-bg);
+  color: var(--shm-text);
+}
+
+/* ---------- Sections ---------- */
+.shm-section {
+  padding: 56px 0;
+}
+
+.shm-section-alt {
+  background: var(--shm-bg-alt);
+}
+
+.shm-section-head {
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+
+.shm-section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--shm-accent);
+  margin-bottom: 10px;
+}
+
+.shm-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: var(--shm-primary);
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.shm-section-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--shm-text-muted);
+}
+
+/* ---------- Hero ---------- */
+.shm-product-hero {
+  padding: 48px 0 56px;
+  background: var(--shm-bg);
+}
+
+.shm-product-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.shm-product-hero-copy .shm-section-label {
+  margin-bottom: 12px;
+}
+
+.shm-product-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  font-weight: 700;
+  color: var(--shm-primary);
+  margin: 0 0 14px;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.shm-product-hero-sub {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--shm-text);
+  line-height: 1.55;
+}
+
+.shm-product-hero-note {
+  margin: 0 0 24px;
+  font-size: 0.9rem;
+  color: var(--shm-text-muted);
+  line-height: 1.65;
+}
+
+.shm-hero-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.shm-hero-summary-card {
+  background: var(--shm-card);
+  border: 1px solid var(--shm-line);
+  border-radius: var(--shm-radius);
+  padding: 14px 16px;
+}
+
+.shm-hero-summary-card dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--shm-text-muted);
+  margin-bottom: 6px;
+}
+
+.shm-hero-summary-card dd {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--shm-primary);
+  line-height: 1.45;
+}
+
+.shm-hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.shm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--shm-radius);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.shm-btn-primary {
+  background: var(--shm-primary);
+  color: #fff;
+}
+
+.shm-btn-primary:hover {
+  background: #1f4a75;
+}
+
+.shm-btn-outline {
+  background: var(--shm-card);
+  color: var(--shm-primary);
+  border-color: var(--shm-line);
+}
+
+.shm-btn-outline:hover {
+  border-color: var(--shm-primary);
+}
+
+.shm-image-wrap {
+  border-radius: var(--shm-radius);
+  overflow: hidden;
+  border: 1px solid var(--shm-line);
+  background: var(--shm-card);
+}
+
+.shm-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.shm-product-hero-visual .shm-image-wrap img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.shm-product-hero-visual:not(:has(.shm-image-wrap)),
+.shm-lineup-visual:not(:has(.shm-image-wrap)),
+.shm-system-visual:not(:has(.shm-image-wrap)) {
+  display: none;
+}
+
+.shm-lineup-layout:not(:has(.shm-lineup-visual .shm-image-wrap)),
+.shm-system-layout:not(:has(.shm-system-visual .shm-image-wrap)) {
+  grid-template-columns: 1fr;
+}
+
+/* ---------- Guide cards ---------- */
+.shm-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.shm-guide-card {
+  background: var(--shm-card);
+  border: 1px solid var(--shm-line);
+  border-radius: var(--shm-radius);
+  padding: 20px 18px;
+}
+
+.shm-guide-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--shm-primary);
+}
+
+.shm-guide-card p {
+  margin: 0 0 14px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--shm-text-muted);
+}
+
+.shm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.shm-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--shm-primary);
+  background: var(--shm-bg);
+  border: 1px solid var(--shm-line);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* ---------- Series lineup ---------- */
+.shm-lineup-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.shm-lineup-visual .shm-image-wrap img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.shm-series-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--shm-line);
+  border-radius: var(--shm-radius);
+}
+
+.shm-series-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.shm-series-table thead {
+  background: var(--shm-primary);
+  color: #fff;
+}
+
+.shm-series-table th,
+.shm-series-table td {
+  padding: 11px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--shm-line);
+}
+
+.shm-series-table th {
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.shm-series-table tbody tr {
+  background: var(--shm-card);
+}
+
+.shm-series-table tbody tr:nth-child(even) {
+  background: var(--shm-bg-alt);
+}
+
+.shm-series-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.shm-series-table td:first-child {
+  font-weight: 600;
+  color: var(--shm-primary);
+}
+
+/* ---------- System configuration ---------- */
+.shm-system-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.shm-system-visual .shm-image-wrap img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--shm-card);
+}
+
+.shm-system-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- System cards ---------- */
+.shm-system-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.shm-system-card {
+  background: var(--shm-card);
+  border: 1px solid var(--shm-line);
+  border-radius: var(--shm-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.shm-system-card .shm-image-wrap {
+  border: none;
+  border-bottom: 1px solid var(--shm-line);
+  border-radius: 0;
+}
+
+.shm-system-card .shm-image-wrap img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.shm-system-card-body {
+  padding: 18px 16px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.shm-system-card-body h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--shm-primary);
+  line-height: 1.4;
+}
+
+.shm-system-card-body p {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--shm-text-muted);
+  flex: 1;
+}
+
+/* ---------- Gallery ---------- */
+.shm-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.shm-gallery-item {
+  border-radius: var(--shm-radius);
+  overflow: hidden;
+  border: 1px solid var(--shm-line);
+  background: var(--shm-card);
+}
+
+.shm-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ---------- CTA ---------- */
+.shm-cta {
+  padding: 48px 0 64px;
+}
+
+.shm-cta-inner {
+  background: var(--shm-primary);
+  border-radius: var(--shm-radius);
+  padding: 40px 48px;
+  text-align: center;
+}
+
+.shm-cta-inner h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.shm-cta-inner p {
+  margin: 0 auto 24px;
+  max-width: 560px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.shm-cta-inner .shm-btn-primary {
+  background: #fff;
+  color: var(--shm-primary);
+}
+
+.shm-cta-inner .shm-btn-primary:hover {
+  background: var(--shm-bg);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .shm-guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shm-system-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shm-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shm-lineup-layout,
+  .shm-system-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .shm-section {
+    padding: 44px 0;
+  }
+
+  .shm-product-hero {
+    padding: 36px 0 44px;
+  }
+
+  .shm-product-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .shm-product-hero-visual {
+    order: -1;
+  }
+
+  .shm-hero-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .shm-guide-grid,
+  .shm-system-grid,
+  .shm-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .shm-hero-btns {
+    flex-direction: column;
+  }
+
+  .shm-hero-btns .shm-btn {
+    width: 100%;
+  }
+
+  .shm-cta-inner {
+    padding: 32px 24px;
+  }
+
+  .shm-cta-inner .shm-btn {
+    width: 100%;
+  }
+}
