@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#0F1117">
+  <title>{% block title %}재고관리{% endblock %} | 재고관리 시스템</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- ── 사이드바 (데스크톱) ─────────────────── -->
+<aside class="sidebar">
+  <div class="sidebar-logo" style="line-height:1.4;">
+    <div style="font-size:0.7rem;color:var(--text-muted);letter-spacing:1px;margin-bottom:2px;">PANASONIC WELDING ROBOT</div>
+    <div>📦&nbsp; 재고관리 시스템</div>
+  </div>
+
+  <nav>
+    <div class="nav-section">메뉴</div>
+    <a href="/dashboard" class="nav-item {% if active=='dashboard' %}active{% endif %}">
+      <span class="nav-icon">📊</span> 대시보드
+    </a>
+    <a href="/products" class="nav-item {% if active=='products' %}active{% endif %}">
+      <span class="nav-icon">📋</span> 재고 목록
+    </a>
+    <a href="/history" class="nav-item {% if active=='history' %}active{% endif %}">
+      <span class="nav-icon">🔄</span> 입출고 내역
+    </a>
+    <a href="/work_logs" class="nav-item {% if active=='work_logs' %}active{% endif %}">
+      <span class="nav-icon">📔</span> 업무일지
+    </a>
+    <a href="/manual" class="nav-item {% if active=='manual' %}active{% endif %}">
+      <span class="nav-icon">📖</span> 메뉴얼보기
+    </a>
+
+    {% if session.role == 'admin' %}
+    <div class="nav-section" style="margin-top:8px;">관리자</div>
+    <a href="/admin/users" class="nav-item {% if active=='admin_users' %}active{% endif %}">
+      <span class="nav-icon">👥</span> 직원 관리
+    </a>
+    <a href="/admin/audit" class="nav-item {% if active=='admin_audit' %}active{% endif %}">
+      <span class="nav-icon">📝</span> 감사 로그
+    </a>
+    {% endif %}
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="user-info">
+      <div class="user-avatar">{{ session.user_name[0] if session.user_name else '?' }}</div>
+      <div>
+        <div class="user-name">{{ session.user_name }}</div>
+        <div class="user-role">{{ '관리자' if session.role == 'admin' else '직원' }}</div>
+      </div>
+    </div>
+    <a href="/logout" class="logout-btn">로그아웃</a>
+  </div>
+</aside>
+
+<!-- ── 모바일 헤더 ─────────────────────────── -->
+<header class="mobile-header">
+  <span class="mobile-logo">📦 재고관리</span>
+  <div class="mobile-user">
+    <span>{{ session.user_name }}</span>
+    <a href="/logout" class="mobile-logout">나가기</a>
+  </div>
+</header>
+
+<!-- ── 메인 컨텐츠 ───────────────────────── -->
+<main class="main-content">
+  <div class="page-inner">
+    <!-- Toast 컨테이너 -->
+    <div id="toast-container"></div>
+
+    {% block content %}{% endblock %}
+  </div>
+</main>
+
+<!-- ── 모바일 하단 내비 ───────────────────── -->
+<nav class="bottom-nav">
+  <a href="/dashboard" class="bottom-nav-item {% if active=='dashboard' %}active{% endif %}">
+    <span class="nav-icon">📊</span><small>대시보드</small>
+  </a>
+  <a href="/products" class="bottom-nav-item {% if active=='products' %}active{% endif %}">
+    <span class="nav-icon">📋</span><small>재고</small>
+  </a>
+  <a href="/history" class="bottom-nav-item {% if active=='history' %}active{% endif %}">
+    <span class="nav-icon">🔄</span><small>입출고</small>
+  </a>
+  <a href="/work_logs" class="bottom-nav-item {% if active=='work_logs' %}active{% endif %}">
+    <span class="nav-icon">📔</span><small>업무일지</small>
+  </a>
+  <a href="/manual" class="bottom-nav-item {% if active=='manual' %}active{% endif %}">
+    <span class="nav-icon">📖</span><small>메뉴얼</small>
+  </a>
+  {% if session.role == 'admin' %}
+  <a href="/admin/users" class="bottom-nav-item {% if active=='admin_users' %}active{% endif %}">
+    <span class="nav-icon">👥</span><small>직원</small>
+  </a>
+  <a href="/admin/audit" class="bottom-nav-item {% if active=='admin_audit' %}active{% endif %}">
+    <span class="nav-icon">📝</span><small>로그</small>
+  </a>
+  {% endif %}
+</nav>
+
+<script src="/static/app.js?v=1.0.3"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

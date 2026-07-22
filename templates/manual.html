@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}로봇 메뉴얼 보기{% endblock %}
+
+{% block content %}
+<div class="page-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+  <h1 class="page-title">📖 로봇 조작 설명서</h1>
+</div>
+
+<div class="filter-bar" style="margin-bottom: 10px;">
+  <div style="font-size:0.9rem; color:var(--text-color);">
+    💡 <strong>안내:</strong> PDF 뷰어 화면의 <strong>왼쪽 상단(또는 우측) 돋보기 아이콘</strong>을 클릭하거나, 키보드의 <strong>Ctrl + F</strong>를 누르면 문서 내 전체 검색을 할 수 있습니다. 
+  </div>
+</div>
+
+<div class="card" style="padding:0; overflow:hidden; border-radius:12px; height: calc(100vh - 180px); min-height: 600px;">
+  <!-- PDF.js 뷰어 (내장 검색 기능 지원) -->
+  {% set pdfjs_viewer = '/static/pdfjs/web/viewer.html' %}
+  {% set file_path = '/static/manual.pdf' %}
+  
+  <iframe src="{{ pdfjs_viewer }}?file={{ file_path }}#pagemode=none" width="100%" height="100%" style="border:none;" title="로봇 조작 설명서"></iframe>
+</div>
+{% endblock %}

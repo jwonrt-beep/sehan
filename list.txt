@@ -1,0 +1,1258 @@
+ E 드라이브의 볼륨: 업무문서
+ 볼륨 일련 번호: 4A30-4CEB
+
+ e:\김영수\재고관리 디렉터리
+
+2026-07-22  오후 01:26    <DIR>          .
+2026-07-22  오후 01:26    <DIR>          ..
+2026-07-20  오후 02:42            21,867 app.py
+2026-07-20  오후 12:04            29,956 database.py
+2026-06-19  오후 03:45             6,616 import_excel.py
+2026-07-20  오후 02:53            77,824 inventory.db
+2026-06-19  오후 02:28            54,539 inventory.zip
+2026-06-19  오후 12:16            37,294 inventory_manager.py
+2026-07-22  오후 01:26                 0 list.txt
+2026-06-18  오후 04:56                45 requirements.txt
+2026-07-20  오후 02:47    <DIR>          static
+2026-07-20  오후 02:36    <DIR>          templates
+2026-06-19  오후 03:45             4,027 update_db_prices.py
+2026-07-20  오후 12:36    <DIR>          __pycache__
+2026-06-19  오후 12:07           422,509 부품가격표.xlsx
+2026-06-18  오후 04:18            19,204 부품코드및재고량.xlsx
+2026-06-17  오후 10:42               671 서버시작.bat
+              12개 파일             674,552 바이트
+
+ e:\김영수\재고관리\static 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2026-07-20  오후 12:55            12,593 app.js
+2026-07-20  오후 02:27        10,120,685 manual.pdf
+2026-07-20  오후 03:24    <DIR>          pdfjs
+2026-07-09  오전 10:02           172,989 SAEHANLOGO.png
+2026-06-22  오전 10:32            21,276 style.css
+               4개 파일          10,327,543 바이트
+
+ e:\김영수\재고관리\static\pdfjs 디렉터리
+
+2026-07-20  오후 03:24    <DIR>          .
+2026-07-20  오후 03:24    <DIR>          ..
+2026-07-20  오후 02:47    <DIR>          build
+2016-07-25  오후 02:25            10,174 LICENSE
+2026-07-20  오후 02:47    <DIR>          web
+2026-07-20  오후 03:24         3,260,229 web.zip
+               2개 파일           3,270,403 바이트
+
+ e:\김영수\재고관리\static\pdfjs\build 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 07:37           568,294 pdf.js
+2023-09-24  오후 07:37         1,434,098 pdf.js.map
+2023-09-24  오후 07:37           637,132 pdf.sandbox.js
+2023-09-24  오후 07:37           553,585 pdf.sandbox.js.map
+2023-09-24  오후 07:37         1,981,637 pdf.worker.js
+2023-09-24  오후 07:37         4,971,937 pdf.worker.js.map
+               6개 파일          10,146,683 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2026-07-20  오후 02:47    <DIR>          cmaps
+2016-11-03  오후 11:03         1,016,315 compressed.tracemonkey-pldi-09.pdf
+2023-09-17  오후 12:41             2,482 debugger.css
+2023-09-17  오후 12:41            17,756 debugger.js
+2026-07-20  오후 02:47    <DIR>          images
+2026-07-20  오후 02:47    <DIR>          locale
+2026-07-20  오후 02:47    <DIR>          standard_fonts
+2023-09-24  오후 07:37            96,934 viewer.css
+2023-09-24  오후 07:37            28,573 viewer.html
+2023-09-24  오후 07:37           437,641 viewer.js
+2023-09-24  오후 07:37         1,108,728 viewer.js.map
+               7개 파일           2,708,429 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\cmaps 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2021-08-01  오후 12:10             2,404 78-EUC-H.bcmap
+2021-08-01  오후 12:10               173 78-EUC-V.bcmap
+2021-08-01  오후 12:10             2,379 78-H.bcmap
+2021-08-01  오후 12:10             2,398 78-RKSJ-H.bcmap
+2021-08-01  오후 12:10               173 78-RKSJ-V.bcmap
+2021-08-01  오후 12:10               169 78-V.bcmap
+2021-08-01  오후 12:10             2,651 78ms-RKSJ-H.bcmap
+2021-08-01  오후 12:10               290 78ms-RKSJ-V.bcmap
+2021-08-01  오후 12:10               905 83pv-RKSJ-H.bcmap
+2021-08-01  오후 12:10               721 90ms-RKSJ-H.bcmap
+2021-08-01  오후 12:10               290 90ms-RKSJ-V.bcmap
+2021-08-01  오후 12:10               715 90msp-RKSJ-H.bcmap
+2021-08-01  오후 12:10               291 90msp-RKSJ-V.bcmap
+2021-08-01  오후 12:10               982 90pv-RKSJ-H.bcmap
+2021-08-01  오후 12:10               260 90pv-RKSJ-V.bcmap
+2021-08-01  오후 12:10             2,419 Add-H.bcmap
+2021-08-01  오후 12:10             2,413 Add-RKSJ-H.bcmap
+2021-08-01  오후 12:10               287 Add-RKSJ-V.bcmap
+2021-08-01  오후 12:10               282 Add-V.bcmap
+2021-08-01  오후 12:10               317 Adobe-CNS1-0.bcmap
+2021-08-01  오후 12:10               371 Adobe-CNS1-1.bcmap
+2021-08-01  오후 12:10               376 Adobe-CNS1-2.bcmap
+2021-08-01  오후 12:10               401 Adobe-CNS1-3.bcmap
+2021-08-01  오후 12:10               405 Adobe-CNS1-4.bcmap
+2021-08-01  오후 12:10               406 Adobe-CNS1-5.bcmap
+2021-08-01  오후 12:10               406 Adobe-CNS1-6.bcmap
+2021-08-01  오후 12:10            41,193 Adobe-CNS1-UCS2.bcmap
+2021-08-01  오후 12:10               217 Adobe-GB1-0.bcmap
+2021-08-01  오후 12:10               250 Adobe-GB1-1.bcmap
+2021-08-01  오후 12:10               465 Adobe-GB1-2.bcmap
+2021-08-01  오후 12:10               470 Adobe-GB1-3.bcmap
+2021-08-01  오후 12:10               601 Adobe-GB1-4.bcmap
+2021-08-01  오후 12:10               625 Adobe-GB1-5.bcmap
+2021-08-01  오후 12:10            33,974 Adobe-GB1-UCS2.bcmap
+2021-08-01  오후 12:10               225 Adobe-Japan1-0.bcmap
+2021-08-01  오후 12:10               226 Adobe-Japan1-1.bcmap
+2021-08-01  오후 12:10               233 Adobe-Japan1-2.bcmap
+2021-08-01  오후 12:10               242 Adobe-Japan1-3.bcmap
+2021-08-01  오후 12:10               337 Adobe-Japan1-4.bcmap
+2021-08-01  오후 12:10               430 Adobe-Japan1-5.bcmap
+2021-08-01  오후 12:10               485 Adobe-Japan1-6.bcmap
+2021-08-01  오후 12:10            40,951 Adobe-Japan1-UCS2.bcmap
+2021-08-01  오후 12:10               241 Adobe-Korea1-0.bcmap
+2021-08-01  오후 12:10               386 Adobe-Korea1-1.bcmap
+2021-08-01  오후 12:10               391 Adobe-Korea1-2.bcmap
+2021-08-01  오후 12:10            23,293 Adobe-Korea1-UCS2.bcmap
+2021-08-01  오후 12:10             1,086 B5-H.bcmap
+2021-08-01  오후 12:10               142 B5-V.bcmap
+2021-08-01  오후 12:10             1,099 B5pc-H.bcmap
+2021-08-01  오후 12:10               144 B5pc-V.bcmap
+2021-08-01  오후 12:10             1,780 CNS-EUC-H.bcmap
+2021-08-01  오후 12:10             1,920 CNS-EUC-V.bcmap
+2021-08-01  오후 12:10               706 CNS1-H.bcmap
+2021-08-01  오후 12:10               143 CNS1-V.bcmap
+2021-08-01  오후 12:10               504 CNS2-H.bcmap
+2021-08-01  오후 12:10                93 CNS2-V.bcmap
+2021-08-01  오후 12:10             1,125 ETen-B5-H.bcmap
+2021-08-01  오후 12:10               158 ETen-B5-V.bcmap
+2021-08-01  오후 12:10               101 ETenms-B5-H.bcmap
+2021-08-01  오후 12:10               172 ETenms-B5-V.bcmap
+2021-08-01  오후 12:10             4,426 ETHK-B5-H.bcmap
+2021-08-01  오후 12:10               158 ETHK-B5-V.bcmap
+2021-08-01  오후 12:10               578 EUC-H.bcmap
+2021-08-01  오후 12:10               170 EUC-V.bcmap
+2021-08-01  오후 12:10             2,536 Ext-H.bcmap
+2021-08-01  오후 12:10             2,542 Ext-RKSJ-H.bcmap
+2021-08-01  오후 12:10               218 Ext-RKSJ-V.bcmap
+2021-08-01  오후 12:10               215 Ext-V.bcmap
+2021-08-01  오후 12:10               549 GB-EUC-H.bcmap
+2021-08-01  오후 12:10               179 GB-EUC-V.bcmap
+2021-08-01  오후 12:10               528 GB-H.bcmap
+2021-08-01  오후 12:10               175 GB-V.bcmap
+2021-08-01  오후 12:10            14,692 GBK-EUC-H.bcmap
+2021-08-01  오후 12:10               180 GBK-EUC-V.bcmap
+2021-08-01  오후 12:10            19,662 GBK2K-H.bcmap
+2021-08-01  오후 12:10               219 GBK2K-V.bcmap
+2021-08-01  오후 12:10            14,686 GBKp-EUC-H.bcmap
+2021-08-01  오후 12:10               181 GBKp-EUC-V.bcmap
+2021-08-01  오후 12:10               557 GBpc-EUC-H.bcmap
+2021-08-01  오후 12:10               181 GBpc-EUC-V.bcmap
+2021-08-01  오후 12:10             7,290 GBT-EUC-H.bcmap
+2021-08-01  오후 12:10               180 GBT-EUC-V.bcmap
+2021-08-01  오후 12:10             7,269 GBT-H.bcmap
+2021-08-01  오후 12:10               176 GBT-V.bcmap
+2021-08-01  오후 12:10             7,298 GBTpc-EUC-H.bcmap
+2021-08-01  오후 12:10               182 GBTpc-EUC-V.bcmap
+2021-08-01  오후 12:10               553 H.bcmap
+2021-08-01  오후 12:10               132 Hankaku.bcmap
+2021-08-01  오후 12:10               124 Hiragana.bcmap
+2021-08-01  오후 12:10             2,654 HKdla-B5-H.bcmap
+2021-08-01  오후 12:10               148 HKdla-B5-V.bcmap
+2021-08-01  오후 12:10             2,414 HKdlb-B5-H.bcmap
+2021-08-01  오후 12:10               148 HKdlb-B5-V.bcmap
+2021-08-01  오후 12:10             2,292 HKgccs-B5-H.bcmap
+2021-08-01  오후 12:10               149 HKgccs-B5-V.bcmap
+2021-08-01  오후 12:10             1,772 HKm314-B5-H.bcmap
+2021-08-01  오후 12:10               149 HKm314-B5-V.bcmap
+2021-08-01  오후 12:10             2,171 HKm471-B5-H.bcmap
+2021-08-01  오후 12:10               149 HKm471-B5-V.bcmap
+2021-08-01  오후 12:10             4,437 HKscs-B5-H.bcmap
+2021-08-01  오후 12:10               159 HKscs-B5-V.bcmap
+2021-08-01  오후 12:10               100 Katakana.bcmap
+2021-08-01  오후 12:10             1,848 KSC-EUC-H.bcmap
+2021-08-01  오후 12:10               164 KSC-EUC-V.bcmap
+2021-08-01  오후 12:10             1,831 KSC-H.bcmap
+2021-08-01  오후 12:10            16,791 KSC-Johab-H.bcmap
+2021-08-01  오후 12:10               166 KSC-Johab-V.bcmap
+2021-08-01  오후 12:10               160 KSC-V.bcmap
+2021-08-01  오후 12:10             2,787 KSCms-UHC-H.bcmap
+2021-08-01  오후 12:10             2,789 KSCms-UHC-HW-H.bcmap
+2021-08-01  오후 12:10               169 KSCms-UHC-HW-V.bcmap
+2021-08-01  오후 12:10               166 KSCms-UHC-V.bcmap
+2021-08-01  오후 12:10             2,024 KSCpc-EUC-H.bcmap
+2021-08-01  오후 12:10               166 KSCpc-EUC-V.bcmap
+2016-07-25  오후 02:25             2,080 LICENSE
+2021-08-01  오후 12:10             2,765 NWP-H.bcmap
+2021-08-01  오후 12:10               252 NWP-V.bcmap
+2021-08-01  오후 12:10               534 RKSJ-H.bcmap
+2021-08-01  오후 12:10               170 RKSJ-V.bcmap
+2021-08-01  오후 12:10                96 Roman.bcmap
+2021-08-01  오후 12:10            48,280 UniCNS-UCS2-H.bcmap
+2021-08-01  오후 12:10               156 UniCNS-UCS2-V.bcmap
+2021-08-01  오후 12:10            50,419 UniCNS-UTF16-H.bcmap
+2021-08-01  오후 12:10               156 UniCNS-UTF16-V.bcmap
+2021-08-01  오후 12:10            52,679 UniCNS-UTF32-H.bcmap
+2021-08-01  오후 12:10               160 UniCNS-UTF32-V.bcmap
+2021-08-01  오후 12:10            53,629 UniCNS-UTF8-H.bcmap
+2021-08-01  오후 12:10               157 UniCNS-UTF8-V.bcmap
+2021-08-01  오후 12:10            43,366 UniGB-UCS2-H.bcmap
+2021-08-01  오후 12:10               193 UniGB-UCS2-V.bcmap
+2021-08-01  오후 12:10            44,086 UniGB-UTF16-H.bcmap
+2021-08-01  오후 12:10               178 UniGB-UTF16-V.bcmap
+2021-08-01  오후 12:10            45,738 UniGB-UTF32-H.bcmap
+2021-08-01  오후 12:10               182 UniGB-UTF32-V.bcmap
+2021-08-01  오후 12:10            46,837 UniGB-UTF8-H.bcmap
+2021-08-01  오후 12:10               181 UniGB-UTF8-V.bcmap
+2021-08-01  오후 12:10            25,439 UniJIS-UCS2-H.bcmap
+2021-08-01  오후 12:10               119 UniJIS-UCS2-HW-H.bcmap
+2021-08-01  오후 12:10               680 UniJIS-UCS2-HW-V.bcmap
+2021-08-01  오후 12:10               664 UniJIS-UCS2-V.bcmap
+2021-08-01  오후 12:10            39,443 UniJIS-UTF16-H.bcmap
+2021-08-01  오후 12:10               643 UniJIS-UTF16-V.bcmap
+2021-08-01  오후 12:10            40,539 UniJIS-UTF32-H.bcmap
+2021-08-01  오후 12:10               677 UniJIS-UTF32-V.bcmap
+2021-08-01  오후 12:10            41,695 UniJIS-UTF8-H.bcmap
+2021-08-01  오후 12:10               678 UniJIS-UTF8-V.bcmap
+2021-08-01  오후 12:10            39,534 UniJIS2004-UTF16-H.bcmap
+2021-08-01  오후 12:10               647 UniJIS2004-UTF16-V.bcmap
+2021-08-01  오후 12:10            40,630 UniJIS2004-UTF32-H.bcmap
+2021-08-01  오후 12:10               681 UniJIS2004-UTF32-V.bcmap
+2021-08-01  오후 12:10            41,779 UniJIS2004-UTF8-H.bcmap
+2021-08-01  오후 12:10               682 UniJIS2004-UTF8-V.bcmap
+2021-08-01  오후 12:10               705 UniJISPro-UCS2-HW-V.bcmap
+2021-08-01  오후 12:10               689 UniJISPro-UCS2-V.bcmap
+2021-08-01  오후 12:10               726 UniJISPro-UTF8-V.bcmap
+2021-08-01  오후 12:10            40,517 UniJISX0213-UTF32-H.bcmap
+2021-08-01  오후 12:10               684 UniJISX0213-UTF32-V.bcmap
+2021-08-01  오후 12:10            40,608 UniJISX02132004-UTF32-H.bcmap
+2021-08-01  오후 12:10               688 UniJISX02132004-UTF32-V.bcmap
+2021-08-01  오후 12:10            25,783 UniKS-UCS2-H.bcmap
+2021-08-01  오후 12:10               178 UniKS-UCS2-V.bcmap
+2021-08-01  오후 12:10            26,327 UniKS-UTF16-H.bcmap
+2021-08-01  오후 12:10               164 UniKS-UTF16-V.bcmap
+2021-08-01  오후 12:10            26,451 UniKS-UTF32-H.bcmap
+2021-08-01  오후 12:10               168 UniKS-UTF32-V.bcmap
+2021-08-01  오후 12:10            27,790 UniKS-UTF8-H.bcmap
+2021-08-01  오후 12:10               169 UniKS-UTF8-V.bcmap
+2021-08-01  오후 12:10               166 V.bcmap
+2021-08-01  오후 12:10               179 WP-Symbol.bcmap
+             169개 파일           1,167,747 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\images 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-23  오후 02:36               920 altText_add.svg
+2023-09-23  오후 02:36             1,087 altText_done.svg
+2016-07-25  오후 02:25               415 annotation-check.svg
+2016-07-25  오후 02:25               883 annotation-comment.svg
+2016-07-25  오후 02:25             2,168 annotation-help.svg
+2016-07-25  오후 02:25               408 annotation-insert.svg
+2016-07-25  오후 02:25             1,452 annotation-key.svg
+2016-07-25  오후 02:25               426 annotation-newparagraph.svg
+2016-07-25  오후 02:25               158 annotation-noicon.svg
+2016-07-25  오후 02:25             1,041 annotation-note.svg
+2023-01-01  오후 02:14               552 annotation-paperclip.svg
+2016-07-25  오후 02:25             1,143 annotation-paragraph.svg
+2023-01-01  오후 02:14             1,375 annotation-pushpin.svg
+2023-01-01  오후 02:14             1,452 cursor-editorFreeText.svg
+2022-10-29  오후 07:21             1,323 cursor-editorInk.svg
+2022-10-29  오후 07:21               578 findbarButton-next.svg
+2022-10-29  오후 07:21               578 findbarButton-previous.svg
+2023-04-29  오전 11:37               782 gv-toolbarButton-download.svg
+2023-05-07  오후 01:05               573 gv-toolbarButton-openinapp.svg
+2020-08-19  오후 11:12             1,586 loading-dark.svg
+2016-07-25  오후 02:25             2,545 loading-icon.gif
+2020-08-19  오후 11:12             1,559 loading.svg
+2022-10-29  오후 07:21               417 secondaryToolbarButton-documentProperties.svg
+2022-10-29  오후 07:21               260 secondaryToolbarButton-firstPage.svg
+2022-10-29  오후 07:21             1,344 secondaryToolbarButton-handTool.svg
+2022-10-29  오후 07:21               257 secondaryToolbarButton-lastPage.svg
+2022-10-29  오후 07:21               596 secondaryToolbarButton-rotateCcw.svg
+2022-10-29  오후 07:21               576 secondaryToolbarButton-rotateCw.svg
+2022-10-29  오후 07:21               971 secondaryToolbarButton-scrollHorizontal.svg
+2022-10-29  오후 07:21               731 secondaryToolbarButton-scrollPage.svg
+2022-10-29  오후 07:21               969 secondaryToolbarButton-scrollVertical.svg
+2022-10-29  오후 07:21             1,228 secondaryToolbarButton-scrollWrapped.svg
+2022-10-29  오후 07:21             1,085 secondaryToolbarButton-selectTool.svg
+2022-10-29  오후 07:21               775 secondaryToolbarButton-spreadEven.svg
+2022-10-29  오후 07:21               395 secondaryToolbarButton-spreadNone.svg
+2022-10-29  오후 07:21               711 secondaryToolbarButton-spreadOdd.svg
+2022-10-29  오후 07:21               861 toolbarButton-bookmark.svg
+2022-10-29  오후 07:21               607 toolbarButton-currentOutlineItem.svg
+2022-09-25  오후 06:47             1,036 toolbarButton-download.svg
+2022-09-25  오후 06:47               915 toolbarButton-editorFreeText.svg
+2022-09-25  오후 06:47             1,189 toolbarButton-editorInk.svg
+2023-07-23  오후 05:41               777 toolbarButton-editorStamp.svg
+2022-09-25  오후 06:47               681 toolbarButton-menuArrow.svg
+2022-10-29  오후 07:21             1,400 toolbarButton-openFile.svg
+2022-09-25  오후 06:47               701 toolbarButton-pageDown.svg
+2022-09-25  오후 06:47               682 toolbarButton-pageUp.svg
+2022-10-29  오후 07:21               681 toolbarButton-presentationMode.svg
+2022-09-25  오후 06:47               927 toolbarButton-print.svg
+2022-09-25  오후 06:47             1,234 toolbarButton-search.svg
+2022-10-29  오후 07:21             1,080 toolbarButton-secondaryToolbarToggle.svg
+2022-10-29  오후 07:21             1,560 toolbarButton-sidebarToggle.svg
+2022-10-29  오후 07:21               570 toolbarButton-viewAttachments.svg
+2022-10-29  오후 07:21               671 toolbarButton-viewLayers.svg
+2022-10-29  오후 07:21               332 toolbarButton-viewOutline.svg
+2022-10-29  오후 07:21             1,396 toolbarButton-viewThumbnail.svg
+2022-09-25  오후 06:47               958 toolbarButton-zoomIn.svg
+2022-09-25  오후 06:47               472 toolbarButton-zoomOut.svg
+2020-08-19  오후 11:12                93 treeitem-collapsed.svg
+2020-08-19  오후 11:12                94 treeitem-expanded.svg
+              59개 파일              52,236 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2026-07-20  오후 02:47    <DIR>          ach
+2026-07-20  오후 02:47    <DIR>          af
+2026-07-20  오후 02:47    <DIR>          an
+2026-07-20  오후 02:47    <DIR>          ar
+2026-07-20  오후 02:47    <DIR>          ast
+2026-07-20  오후 02:47    <DIR>          az
+2026-07-20  오후 02:47    <DIR>          be
+2026-07-20  오후 02:47    <DIR>          bg
+2026-07-20  오후 02:47    <DIR>          bn
+2026-07-20  오후 02:47    <DIR>          bo
+2026-07-20  오후 02:47    <DIR>          br
+2026-07-20  오후 02:47    <DIR>          brx
+2026-07-20  오후 02:47    <DIR>          bs
+2026-07-20  오후 02:47    <DIR>          ca
+2026-07-20  오후 02:47    <DIR>          cak
+2026-07-20  오후 02:47    <DIR>          ckb
+2026-07-20  오후 02:47    <DIR>          cs
+2026-07-20  오후 02:47    <DIR>          cy
+2026-07-20  오후 02:47    <DIR>          da
+2026-07-20  오후 02:47    <DIR>          de
+2026-07-20  오후 02:47    <DIR>          dsb
+2026-07-20  오후 02:47    <DIR>          el
+2026-07-20  오후 02:47    <DIR>          en-CA
+2026-07-20  오후 02:47    <DIR>          en-GB
+2026-07-20  오후 02:47    <DIR>          en-US
+2026-07-20  오후 02:47    <DIR>          eo
+2026-07-20  오후 02:47    <DIR>          es-AR
+2026-07-20  오후 02:47    <DIR>          es-CL
+2026-07-20  오후 02:47    <DIR>          es-ES
+2026-07-20  오후 02:47    <DIR>          es-MX
+2026-07-20  오후 02:47    <DIR>          et
+2026-07-20  오후 02:47    <DIR>          eu
+2026-07-20  오후 02:47    <DIR>          fa
+2026-07-20  오후 02:47    <DIR>          ff
+2026-07-20  오후 02:47    <DIR>          fi
+2026-07-20  오후 02:47    <DIR>          fr
+2026-07-20  오후 02:47    <DIR>          fur
+2026-07-20  오후 02:47    <DIR>          fy-NL
+2026-07-20  오후 02:47    <DIR>          ga-IE
+2026-07-20  오후 02:47    <DIR>          gd
+2026-07-20  오후 02:47    <DIR>          gl
+2026-07-20  오후 02:47    <DIR>          gn
+2026-07-20  오후 02:47    <DIR>          gu-IN
+2026-07-20  오후 02:47    <DIR>          he
+2026-07-20  오후 02:47    <DIR>          hi-IN
+2026-07-20  오후 02:47    <DIR>          hr
+2026-07-20  오후 02:47    <DIR>          hsb
+2026-07-20  오후 02:47    <DIR>          hu
+2026-07-20  오후 02:47    <DIR>          hy-AM
+2026-07-20  오후 02:47    <DIR>          hye
+2026-07-20  오후 02:47    <DIR>          ia
+2026-07-20  오후 02:47    <DIR>          id
+2026-07-20  오후 02:47    <DIR>          is
+2026-07-20  오후 02:47    <DIR>          it
+2026-07-20  오후 02:47    <DIR>          ja
+2026-07-20  오후 02:47    <DIR>          ka
+2026-07-20  오후 02:47    <DIR>          kab
+2026-07-20  오후 02:47    <DIR>          kk
+2026-07-20  오후 02:47    <DIR>          km
+2026-07-20  오후 02:47    <DIR>          kn
+2026-07-20  오후 02:47    <DIR>          ko
+2026-07-20  오후 02:47    <DIR>          lij
+2026-07-20  오후 02:47    <DIR>          lo
+2023-09-24  오후 07:37             4,606 locale.properties
+2026-07-20  오후 02:47    <DIR>          lt
+2026-07-20  오후 02:47    <DIR>          ltg
+2026-07-20  오후 02:47    <DIR>          lv
+2026-07-20  오후 02:47    <DIR>          meh
+2026-07-20  오후 02:47    <DIR>          mk
+2026-07-20  오후 02:47    <DIR>          mr
+2026-07-20  오후 02:47    <DIR>          ms
+2026-07-20  오후 02:47    <DIR>          my
+2026-07-20  오후 02:47    <DIR>          nb-NO
+2026-07-20  오후 02:47    <DIR>          ne-NP
+2026-07-20  오후 02:47    <DIR>          nl
+2026-07-20  오후 02:47    <DIR>          nn-NO
+2026-07-20  오후 02:47    <DIR>          oc
+2026-07-20  오후 02:47    <DIR>          pa-IN
+2026-07-20  오후 02:47    <DIR>          pl
+2026-07-20  오후 02:47    <DIR>          pt-BR
+2026-07-20  오후 02:47    <DIR>          pt-PT
+2026-07-20  오후 02:47    <DIR>          rm
+2026-07-20  오후 02:47    <DIR>          ro
+2026-07-20  오후 02:47    <DIR>          ru
+2026-07-20  오후 02:47    <DIR>          sat
+2026-07-20  오후 02:47    <DIR>          sc
+2026-07-20  오후 02:47    <DIR>          scn
+2026-07-20  오후 02:47    <DIR>          sco
+2026-07-20  오후 02:47    <DIR>          si
+2026-07-20  오후 02:47    <DIR>          sk
+2026-07-20  오후 02:47    <DIR>          skr
+2026-07-20  오후 02:47    <DIR>          sl
+2026-07-20  오후 02:47    <DIR>          son
+2026-07-20  오후 02:47    <DIR>          sq
+2026-07-20  오후 02:47    <DIR>          sr
+2026-07-20  오후 02:47    <DIR>          sv-SE
+2026-07-20  오후 02:47    <DIR>          szl
+2026-07-20  오후 02:47    <DIR>          ta
+2026-07-20  오후 02:47    <DIR>          te
+2026-07-20  오후 02:47    <DIR>          tg
+2026-07-20  오후 02:47    <DIR>          th
+2026-07-20  오후 02:47    <DIR>          tl
+2026-07-20  오후 02:47    <DIR>          tr
+2026-07-20  오후 02:47    <DIR>          trs
+2026-07-20  오후 02:47    <DIR>          uk
+2026-07-20  오후 02:47    <DIR>          ur
+2026-07-20  오후 02:47    <DIR>          uz
+2026-07-20  오후 02:47    <DIR>          vi
+2026-07-20  오후 02:47    <DIR>          wo
+2026-07-20  오후 02:47    <DIR>          xh
+2026-07-20  오후 02:47    <DIR>          zh-CN
+2026-07-20  오후 02:47    <DIR>          zh-TW
+               1개 파일               4,606 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ach 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36             8,997 viewer.properties
+               1개 파일               8,997 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\af 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36             6,348 viewer.properties
+               1개 파일               6,348 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\an 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            10,497 viewer.properties
+               1개 파일              10,497 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ar 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            11,607 viewer.properties
+               1개 파일              11,607 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ast 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36             8,512 viewer.properties
+               1개 파일               8,512 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\az 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            10,506 viewer.properties
+               1개 파일              10,506 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\be 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            15,118 viewer.properties
+               1개 파일              15,118 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\bg 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            12,233 viewer.properties
+               1개 파일              12,233 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\bn 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            13,157 viewer.properties
+               1개 파일              13,157 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\bo 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36             9,668 viewer.properties
+               1개 파일               9,668 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\br 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            10,684 viewer.properties
+               1개 파일              10,684 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\brx 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            10,793 viewer.properties
+               1개 파일              10,793 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\bs 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36             7,678 viewer.properties
+               1개 파일               7,678 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ca 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            11,930 viewer.properties
+               1개 파일              11,930 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\cak 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            11,684 viewer.properties
+               1개 파일              11,684 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ckb 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            11,267 viewer.properties
+               1개 파일              11,267 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\cs 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,454 viewer.properties
+               1개 파일              13,454 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\cy 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            12,154 viewer.properties
+               1개 파일              12,154 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\da 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            12,060 viewer.properties
+               1개 파일              12,060 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\de 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            12,659 viewer.properties
+               1개 파일              12,659 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\dsb 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,599 viewer.properties
+               1개 파일              13,599 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\el 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            15,636 viewer.properties
+               1개 파일              15,636 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\en-CA 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-10  오전 11:32            11,762 viewer.properties
+               1개 파일              11,762 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\en-GB 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            12,711 viewer.properties
+               1개 파일              12,711 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\en-US 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-23  오후 02:36            12,711 viewer.properties
+               1개 파일              12,711 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\eo 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            12,237 viewer.properties
+               1개 파일              12,237 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\es-AR 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,424 viewer.properties
+               1개 파일              13,424 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\es-CL 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,582 viewer.properties
+               1개 파일              13,582 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\es-ES 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-10  오전 11:32            12,601 viewer.properties
+               1개 파일              12,601 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\es-MX 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            11,568 viewer.properties
+               1개 파일              11,568 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\et 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            10,506 viewer.properties
+               1개 파일              10,506 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\eu 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,410 viewer.properties
+               1개 파일              13,410 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\fa 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            10,664 viewer.properties
+               1개 파일              10,664 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ff 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36             9,594 viewer.properties
+               1개 파일               9,594 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\fi 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            12,262 viewer.properties
+               1개 파일              12,262 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\fr 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            12,857 viewer.properties
+               1개 파일              12,857 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\fur 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:36            12,553 viewer.properties
+               1개 파일              12,553 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\fy-NL 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,187 viewer.properties
+               1개 파일              12,187 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ga-IE 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             8,305 viewer.properties
+               1개 파일               8,305 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\gd 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,932 viewer.properties
+               1개 파일              11,932 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\gl 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            12,543 viewer.properties
+               1개 파일              12,543 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\gn 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,063 viewer.properties
+               1개 파일              13,063 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\gu-IN 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            13,315 viewer.properties
+               1개 파일              13,315 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\he 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            14,446 viewer.properties
+               1개 파일              14,446 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\hi-IN 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            13,489 viewer.properties
+               1개 파일              13,489 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\hr 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,048 viewer.properties
+               1개 파일              11,048 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\hsb 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,639 viewer.properties
+               1개 파일              13,639 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\hu 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,796 viewer.properties
+               1개 파일              13,796 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\hy-AM 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,573 viewer.properties
+               1개 파일              12,573 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\hye 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            13,185 viewer.properties
+               1개 파일              13,185 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ia 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,504 viewer.properties
+               1개 파일              13,504 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\id 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,121 viewer.properties
+               1개 파일              11,121 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\is 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,211 viewer.properties
+               1개 파일              13,211 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\it 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,712 viewer.properties
+               1개 파일              13,712 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ja 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            13,429 viewer.properties
+               1개 파일              13,429 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ka 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            19,227 viewer.properties
+               1개 파일              19,227 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\kab 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,050 viewer.properties
+               1개 파일              12,050 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\kk 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            16,213 viewer.properties
+               1개 파일              16,213 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\km 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,700 viewer.properties
+               1개 파일              11,700 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\kn 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            10,146 viewer.properties
+               1개 파일              10,146 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ko 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,591 viewer.properties
+               1개 파일              13,591 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\lij 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             9,926 viewer.properties
+               1개 파일               9,926 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\lo 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            15,239 viewer.properties
+               1개 파일              15,239 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\lt 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            10,950 viewer.properties
+               1개 파일              10,950 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ltg 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             8,499 viewer.properties
+               1개 파일               8,499 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\lv 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             9,859 viewer.properties
+               1개 파일               9,859 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\meh 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             5,024 viewer.properties
+               1개 파일               5,024 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\mk 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,736 viewer.properties
+               1개 파일              11,736 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\mr 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,654 viewer.properties
+               1개 파일              12,654 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ms 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             9,659 viewer.properties
+               1개 파일               9,659 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\my 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            10,455 viewer.properties
+               1개 파일              10,455 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\nb-NO 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            12,928 viewer.properties
+               1개 파일              12,928 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ne-NP 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,299 viewer.properties
+               1개 파일              12,299 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\nl 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            12,637 viewer.properties
+               1개 파일              12,637 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\nn-NO 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,930 viewer.properties
+               1개 파일              11,930 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\oc 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,119 viewer.properties
+               1개 파일              13,119 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\pa-IN 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            15,651 viewer.properties
+               1개 파일              15,651 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\pl 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,570 viewer.properties
+               1개 파일              12,570 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\pt-BR 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,465 viewer.properties
+               1개 파일              12,465 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\pt-PT 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,569 viewer.properties
+               1개 파일              12,569 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\rm 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,798 viewer.properties
+               1개 파일              12,798 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ro 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            10,400 viewer.properties
+               1개 파일              10,400 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ru 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            15,308 viewer.properties
+               1개 파일              15,308 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\sat 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            17,023 viewer.properties
+               1개 파일              17,023 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\sc 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,279 viewer.properties
+               1개 파일              12,279 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\scn 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             4,739 viewer.properties
+               1개 파일               4,739 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\sco 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            10,077 viewer.properties
+               1개 파일              10,077 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\si 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            13,001 viewer.properties
+               1개 파일              13,001 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\sk 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,684 viewer.properties
+               1개 파일              12,684 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\skr 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            13,773 viewer.properties
+               1개 파일              13,773 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\sl 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,151 viewer.properties
+               1개 파일              13,151 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\son 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             6,083 viewer.properties
+               1개 파일               6,083 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\sq 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,269 viewer.properties
+               1개 파일              11,269 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\sr 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            14,128 viewer.properties
+               1개 파일              14,128 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\sv-SE 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            12,980 viewer.properties
+               1개 파일              12,980 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\szl 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            10,422 viewer.properties
+               1개 파일              10,422 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ta 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,127 viewer.properties
+               1개 파일              11,127 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\te 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,040 viewer.properties
+               1개 파일              12,040 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\tg 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            16,269 viewer.properties
+               1개 파일              16,269 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\th 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-10  오전 11:32            16,273 viewer.properties
+               1개 파일              16,273 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\tl 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            10,328 viewer.properties
+               1개 파일              10,328 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\tr 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            13,205 viewer.properties
+               1개 파일              13,205 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\trs 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             8,587 viewer.properties
+               1개 파일               8,587 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\uk 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            16,374 viewer.properties
+               1개 파일              16,374 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\ur 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            11,033 viewer.properties
+               1개 파일              11,033 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\uz 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             5,972 viewer.properties
+               1개 파일               5,972 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\vi 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37            12,931 viewer.properties
+               1개 파일              12,931 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\wo 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             4,013 viewer.properties
+               1개 파일               4,013 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\xh 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-09  오후 03:37             6,759 viewer.properties
+               1개 파일               6,759 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\zh-CN 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            12,654 viewer.properties
+               1개 파일              12,654 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\locale\zh-TW 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2023-09-24  오후 12:26            12,570 viewer.properties
+               1개 파일              12,570 바이트
+
+ e:\김영수\재고관리\static\pdfjs\web\standard_fonts 디렉터리
+
+2026-07-20  오후 02:47    <DIR>          .
+2026-07-20  오후 02:47    <DIR>          ..
+2021-07-24  오후 03:00            29,513 FoxitDingbats.pfb
+2021-07-24  오후 03:00            17,597 FoxitFixed.pfb
+2021-07-24  오후 03:00            18,055 FoxitFixedBold.pfb
+2021-07-24  오후 03:00            19,151 FoxitFixedBoldItalic.pfb
+2021-07-24  오후 03:00            18,746 FoxitFixedItalic.pfb
+2021-07-24  오후 03:00            19,469 FoxitSerif.pfb
+2021-07-24  오후 03:00            19,395 FoxitSerifBold.pfb
+2021-07-24  오후 03:00            20,733 FoxitSerifBoldItalic.pfb
+2021-07-24  오후 03:00            21,227 FoxitSerifItalic.pfb
+2021-07-24  오후 03:00            16,729 FoxitSymbol.pfb
+2021-07-24  오후 03:00           137,052 LiberationSans-Bold.ttf
+2021-07-24  오후 03:00           135,124 LiberationSans-BoldItalic.ttf
+2021-07-24  오후 03:00           162,036 LiberationSans-Italic.ttf
+2021-07-24  오후 03:00           139,512 LiberationSans-Regular.ttf
+2021-07-24  오후 03:00             1,553 LICENSE_FOXIT
+2021-07-24  오후 03:00             4,414 LICENSE_LIBERATION
+              16개 파일             780,306 바이트
+
+ e:\김영수\재고관리\templates 디렉터리
+
+2026-07-20  오후 02:36    <DIR>          .
+2026-07-20  오후 02:36    <DIR>          ..
+2026-06-17  오후 09:45             3,897 admin_audit.html
+2026-07-07  오후 04:02             5,487 admin_users.html
+2026-07-20  오후 02:36             4,457 base.html
+2026-06-19  오후 12:16             5,657 dashboard.html
+2026-06-17  오후 10:16             3,237 history.html
+2026-07-09  오전 10:08             1,772 login.html
+2026-07-20  오후 02:56             1,135 manual.html
+2026-06-22  오전 10:13            21,737 products.html
+2026-07-20  오후 12:58            11,285 work_logs.html
+               9개 파일              58,664 바이트
+
+ e:\김영수\재고관리\__pycache__ 디렉터리
+
+2026-07-20  오후 12:36    <DIR>          .
+2026-07-20  오후 12:36    <DIR>          ..
+2026-06-19  오후 03:45            23,897 app.cpython-313.pyc
+2026-07-20  오후 12:36            34,504 database.cpython-313.pyc
+2026-06-17  오후 10:16            21,109 database.cpython-314.pyc
+               3개 파일              79,510 바이트
+
+     전체 파일:
+             399개 파일          30,595,206 바이트
+             365개 디렉터리  149,864,366,080 바이트 남음

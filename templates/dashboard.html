@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block title %}대시보드{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">📊 대시보드</h1>
+  <span class="text-muted" style="font-size:0.82rem;">
+    {{ session.user_name }}님 안녕하세요 👋
+  </span>
+</div>
+
+<!-- 통계 카드 4개 -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-icon blue">📦</div>
+    <div>
+      <div class="stat-value">{{ stats.total_products }}</div>
+      <div class="stat-label">전체 품목 수</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon green">💰</div>
+    <div>
+      <div class="stat-value" style="font-size:1.05rem;">¥{{ '{:,}'.format(stats.total_value) }}</div>
+      <div class="stat-label">총 재고 자산</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon red">⚠️</div>
+    <div>
+      <div class="stat-value {% if stats.low_stock > 0 %}text-red{% endif %}">
+        {{ stats.low_stock }}
+      </div>
+      <div class="stat-label">재고 부족 품목</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon amber">🔄</div>
+    <div>
+      <div class="stat-value">{{ stats.today_transactions }}</div>
+      <div class="stat-label">오늘 입출고 건수</div>
+    </div>
+  </div>
+</div>
+
+<!-- 카테고리별 현황 -->
+<div class="card mb-16" style="margin-bottom:16px;">
+  <div class="section-title">📂 카테고리별 재고 현황</div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:10px; margin-top:4px;">
+    {% set cat_colors = {
+      '소모품':'var(--green)',
+      '주요 모듈':'var(--accent)',
+      '전기/전자 부품':'var(--amber)',
+      '유지보수/기타':'var(--purple)'
+    } %}
+    {% for cat in stats.categories %}
+    <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:12px 14px;">
+      <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:4px;">{{ cat.category }}</div>
+      <div style="font-size:1.1rem; font-weight:700; color:{{ cat_colors.get(cat.category, 'var(--text)') }};">
+        {{ cat.count }}품목
+      </div>
+      <div style="font-size:0.78rem; color:var(--text-muted);">¥{{ '{:,}'.format(cat.value) }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- 하단 2열 -->
+<div class="dash-grid">
+
+  <!-- 재고 부족 목록 -->
+  <div class="card">
+    <div class="section-title">⚠️ 재고 부족 / 보충 필요</div>
+    {% if low_items %}
+    <div class="low-stock-list">
+      {% for item in low_items[:10] %}
+      <div class="low-stock-item">
+        <div>
+          <div style="font-size:0.72rem; color:var(--text-muted);">[{{ item.item_code }}]</div>
+          <div class="low-stock-name">{{ item.name }}</div>
+          <div style="font-size:0.72rem; color:var(--text-muted);">위치: {{ item.location or '—' }}</div>
+        </div>
+        <div style="text-align:right;">
+          <span class="low-stock-qty {% if item.quantity == 0 %}text-red{% else %}text-amber{% endif %}">
+            {{ item.quantity }} {{ item.unit }}
+          </span>
+          {% if item.quantity == 0 %}
+          <div><span class="badge badge-red" style="font-size:0.68rem;">품절</span></div>
+          {% else %}
+          <div style="font-size:0.7rem; color:var(--text-muted);">기준: {{ item.low_stock_alert }}</div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+      {% if low_items|length > 10 %}
+      <div style="text-align:center;padding:8px 0;font-size:0.8rem;color:var(--text-muted);">
+        외 {{ low_items|length - 10 }}개 더 있음 →
+        <a href="/products" style="color:var(--accent);">전체 보기</a>
+      </div>
+      {% endif %}
+    </div>
+    {% else %}
+    <div class="empty-state" style="padding:24px 0;">
+      <div style="font-size:1.8rem;">✅</div>
+      <p style="margin-top:8px;color:var(--green);">모든 재고가 충분합니다.</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- 최근 활동 -->
+  <div class="card">
+    <div class="section-title">🕐 최근 활동 이력</div>
+    {% if recent %}
+    {% set colors = {
+      'ADD':'var(--accent)', 'EDIT':'var(--amber)',
+      'DELETE':'var(--red)', 'STOCK_IN':'var(--green)',
+      'STOCK_OUT':'var(--purple)', 'LOGIN':'var(--text-muted)',
+      'LOGOUT':'var(--text-muted)'
+    } %}
+    {% set labels = {'ADD':'추가','EDIT':'수정','DELETE':'삭제',
+                     'STOCK_IN':'입고','STOCK_OUT':'출고',
+                     'LOGIN':'로그인','LOGOUT':'로그아웃',
+                     'RESET_PW':'비번변경','TOGGLE_USER':'계정변경'} %}
+    {% for log in recent %}
+    <div class="recent-log-item">
+      <div class="log-action-dot"
+           style="background:{{ colors.get(log.action,'var(--text-muted)') }};"></div>
+      <div class="log-main">
+        <div>
+          <span class="fw-600" style="font-size:0.83rem;">{{ log.user_name }}</span>
+          <span class="action-label action-{{ log.action }}" style="margin-left:6px;">
+            {{ labels.get(log.action, log.action) }}
+          </span>
+        </div>
+        {% if log.target_name %}
+        <div style="font-size:0.78rem;color:var(--text-muted);margin-top:2px;">
+          {{ log.target_name }}{% if log.note %} · {{ log.note }}{% endif %}
+        </div>
+        {% endif %}
+        <div class="log-time">{{ log.created_at }}</div>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="empty-state" style="padding:24px 0;"><p>활동 내역이 없습니다.</p></div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

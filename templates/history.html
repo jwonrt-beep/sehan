@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}입출고 내역{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">🔄 입출고 내역</h1>
+</div>
+
+<div class="filter-bar">
+  <form method="GET" action="/history"
+        style="display:flex;gap:8px;flex-wrap:wrap;width:100%;">
+    <div class="search-input-wrap" style="flex:1;min-width:180px;">
+      <span class="search-icon">🔍</span>
+      <input name="search" type="text" class="search-input"
+             placeholder="품목명, 담당자, 비고 검색…" value="{{ search }}">
+    </div>
+    <button type="button"
+            class="filter-chip {% if not action_filter %}active{% endif %}"
+            onclick="setAF(this,'')">전체</button>
+    <button type="button"
+            class="filter-chip {% if action_filter=='STOCK_IN' %}active{% endif %}"
+            onclick="setAF(this,'STOCK_IN')">📥 입고</button>
+    <button type="button"
+            class="filter-chip {% if action_filter=='STOCK_OUT' %}active{% endif %}"
+            onclick="setAF(this,'STOCK_OUT')">📤 출고</button>
+    <input type="hidden" name="action" id="hid-action" value="{{ action_filter }}">
+    <button type="submit" class="btn btn-primary btn-sm">검색</button>
+  </form>
+</div>
+
+<div class="row-count">총 <span id="tbl-history-count">{{ logs|length }}</span>건</div>
+
+<div class="table-wrap">
+  <div class="table-scroll">
+    <table id="tbl-history">
+      <thead>
+        <tr>
+          <th>일시</th>
+          <th>구분</th>
+          <th>품목 (코드 · 품명)</th>
+          <th>담당자</th>
+          <th>변경 전 수량</th>
+          <th>변경 후 수량</th>
+          <th>비고</th>
+          <th>IP</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+        <tr>
+          <td style="font-size:0.78rem;color:var(--text-muted);white-space:nowrap;">
+            {{ log.created_at }}
+          </td>
+          <td>
+            <span class="action-label action-{{ log.action }}">
+              {{ '📥 입고' if log.action == 'STOCK_IN' else '📤 출고' }}
+            </span>
+          </td>
+          <td class="fw-600" style="font-size:0.85rem;">{{ log.target_name or '—' }}</td>
+          <td>{{ log.user_name }}</td>
+          <td class="text-muted" style="font-size:0.82rem;">{{ log.before_data or '—' }}</td>
+          <td class="text-muted" style="font-size:0.82rem;">{{ log.after_data  or '—' }}</td>
+          <td class="text-muted" style="font-size:0.82rem;">{{ log.note or '—' }}</td>
+          <td class="text-muted" style="font-size:0.75rem;">{{ log.ip_address or '—' }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="8">
+            <div class="empty-state">
+              <div class="empty-icon">📭</div>
+              <p>입출고 내역이 없습니다.</p>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function setAF(btn, val) {
+  document.getElementById('hid-action').value = val;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+{% endblock %}

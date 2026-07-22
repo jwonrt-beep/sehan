@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}감사 로그{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">📝 감사 로그 (전체 변경 이력)</h1>
+</div>
+
+<!-- 필터 -->
+<div class="filter-bar">
+  <form method="GET" action="/admin/audit"
+        style="display:flex; gap:8px; flex-wrap:wrap; width:100%;">
+
+    <div class="search-input-wrap" style="min-width:180px; flex:1;">
+      <span class="search-icon">🔍</span>
+      <input name="search" type="text" class="search-input"
+             placeholder="상품명, 담당자, 비고 검색…" value="{{ search }}">
+    </div>
+
+    <select name="user" class="filter-select">
+      <option value="">전체 직원</option>
+      {% for u in users %}
+      <option value="{{ u.name }}" {% if user_filter == u.name %}selected{% endif %}>
+        {{ u.name }}
+      </option>
+      {% endfor %}
+    </select>
+
+    <select name="action" class="filter-select">
+      <option value="" {% if not action_filter %}selected{% endif %}>전체 액션</option>
+      {% for act, lbl in [
+        ('ADD','추가'), ('EDIT','수정'), ('DELETE','삭제'),
+        ('STOCK_IN','입고'), ('STOCK_OUT','출고'),
+        ('LOGIN','로그인'), ('LOGOUT','로그아웃'),
+        ('TOGGLE_USER','계정 변경'), ('RESET_PW','비번 변경')
+      ] %}
+      <option value="{{ act }}" {% if action_filter == act %}selected{% endif %}>{{ lbl }}</option>
+      {% endfor %}
+    </select>
+
+    <button type="submit" class="btn btn-primary btn-sm">검색</button>
+    <a href="/admin/audit" class="btn btn-ghost btn-sm">초기화</a>
+  </form>
+</div>
+
+<div class="row-count">총 <span id="tbl-audit-count">{{ logs|length }}</span>건</div>
+
+<div class="table-wrap">
+  <div class="table-scroll">
+    <table id="tbl-audit">
+      <thead>
+        <tr>
+          <th>일시</th>
+          <th>담당자</th>
+          <th>액션</th>
+          <th>대상</th>
+          <th>변경 전</th>
+          <th>변경 후</th>
+          <th>비고</th>
+          <th>IP</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+        {% set action_labels = {
+          'ADD':'추가', 'EDIT':'수정', 'DELETE':'삭제',
+          'STOCK_IN':'입고', 'STOCK_OUT':'출고',
+          'LOGIN':'로그인', 'LOGOUT':'로그아웃',
+          'TOGGLE_USER':'계정변경', 'RESET_PW':'비번변경'
+        } %}
+        <tr>
+          <td style="font-size:0.78rem; color:var(--text-muted); white-space:nowrap;">
+            {{ log.created_at }}
+          </td>
+          <td>
+            <span class="fw-600">{{ log.user_name }}</span>
+          </td>
+          <td>
+            <span class="action-label action-{{ log.action }}">
+              {{ action_labels.get(log.action, log.action) }}
+            </span>
+          </td>
+          <td style="font-size:0.85rem;">{{ log.target_name or '—' }}</td>
+          <td class="text-muted" style="font-size:0.78rem; max-width:160px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"
+              title="{{ log.before_data or '' }}">
+            {{ log.before_data or '—' }}
+          </td>
+          <td class="text-muted" style="font-size:0.78rem; max-width:160px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"
+              title="{{ log.after_data or '' }}">
+            {{ log.after_data or '—' }}
+          </td>
+          <td class="text-muted" style="font-size:0.8rem;">{{ log.note or '—' }}</td>
+          <td class="text-muted" style="font-size:0.75rem;">{{ log.ip_address or '—' }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="8">
+            <div class="empty-state">
+              <div class="empty-icon">📝</div>
+              <p>로그가 없습니다.</p>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

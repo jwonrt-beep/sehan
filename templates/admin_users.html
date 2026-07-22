@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}직원 관리{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">👥 직원 관리</h1>
+  <div class="page-actions">
+    <button class="btn btn-primary" onclick="openAddUserModal()">➕ 직원 추가</button>
+  </div>
+</div>
+
+<div class="search-bar">
+  <div class="search-input-wrap">
+    <span class="search-icon">🔍</span>
+    <input id="search-users" type="text" class="search-input"
+           placeholder="이름 또는 아이디 검색…">
+  </div>
+</div>
+
+<div class="row-count">총 <span id="tbl-users-count">{{ users|length }}</span>명</div>
+
+<div class="table-wrap">
+  <div class="table-scroll">
+    <table id="tbl-users">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>이름</th>
+          <th>아이디</th>
+          <th>권한</th>
+          <th>상태</th>
+          <th>등록일</th>
+          <th style="text-align:center;">작업</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td class="text-muted">{{ user.id }}</td>
+          <td class="fw-600">{{ user.name }}</td>
+          <td class="text-muted">{{ user.username }}</td>
+          <td>
+            {% if user.role == 'admin' %}
+            <span class="badge badge-purple">대표/관리자</span>
+            {% elif user.role == 'manager' %}
+            <span class="badge badge-accent">팀장</span>
+            {% else %}
+            <span class="badge badge-gray">직원</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if user.is_active %}
+            <span class="badge badge-green">활성</span>
+            {% else %}
+            <span class="badge badge-red">비활성</span>
+            {% endif %}
+          </td>
+          <td class="text-muted" style="font-size:0.78rem;">
+            {{ user.created_at[:10] if user.created_at else '—' }}
+          </td>
+          <td>
+            <div class="table-actions">
+              <button class="btn btn-ghost btn-sm"
+                      onclick="openResetPwModal({{ user.id }})">🔑 비번 변경</button>
+              <button class="btn btn-sm {% if user.is_active %}btn-warning{% else %}btn-ghost{% endif %}"
+                      onclick="toggleUser({{ user.id }})">
+                {{ '🔴 비활성화' if user.is_active else '🟢 활성화' }}
+              </button>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     모달: 직원 추가
+══════════════════════════════════════════ -->
+<div id="modal-user" class="modal-overlay">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <span class="modal-title">➕ 직원 추가</span>
+      <button class="modal-close" onclick="closeModal('modal-user')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="form-user" onsubmit="return false;">
+        <div class="form-group">
+          <label class="form-label">이름 *</label>
+          <input id="u-name" class="form-control" placeholder="홍길동" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">아이디 *</label>
+          <input id="u-username" class="form-control" placeholder="로그인 아이디" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">초기 비밀번호 *</label>
+          <input id="u-password" type="password" class="form-control"
+                 placeholder="4자 이상" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">권한</label>
+          <select id="u-role" class="form-control">
+            <option value="staff">직원</option>
+            <option value="manager">팀장</option>
+            <option value="admin">관리자(대표)</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-user')">취소</button>
+      <button id="btn-save-user" class="btn btn-primary" onclick="submitUser()">계정 생성</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     모달: 비밀번호 변경
+══════════════════════════════════════════ -->
+<div id="modal-reset-pw" class="modal-overlay">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <span class="modal-title">🔑 비밀번호 변경</span>
+      <button class="modal-close" onclick="closeModal('modal-reset-pw')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">새 비밀번호 (4자 이상)</label>
+        <input id="new-password" type="password" class="form-control"
+               placeholder="새 비밀번호">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-reset-pw')">취소</button>
+      <button id="btn-confirm-pw" class="btn btn-primary" onclick="confirmResetPw()">변경</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,509 @@
+{% extends "base.html" %}
+{% block title %}재고 목록{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">📋 재고 목록</h1>
+  <div class="page-actions" style="display:flex;gap:8px;">
+    <button class="btn btn-success" onclick="openImportModal()">📥 엑셀 가져오기</button>
+    <button class="btn btn-warning" onclick="openPriceUpdateModal()">💰 단가 업데이트</button>
+    <button class="btn btn-primary" onclick="openAddModal()">➕ 품목 추가</button>
+  </div>
+</div>
+
+<!-- 검색 / 필터 -->
+<div class="search-bar">
+  <div class="search-input-wrap">
+    <span class="search-icon">🔍</span>
+    <input id="search-products" type="text" class="search-input"
+           placeholder="품목코드, 품명, 규격, 위치, 공급처 검색…">
+  </div>
+  <form method="GET" action="/products" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+    <select name="category" class="filter-select" onchange="this.form.submit()">
+      <option value="전체" {% if category=='전체' %}selected{% endif %}>전체 카테고리</option>
+      <option value="소모품"         {% if category=='소모품' %}selected{% endif %}>🔩 소모품</option>
+      <option value="주요 모듈"      {% if category=='주요 모듈' %}selected{% endif %}>⚙️ 주요 모듈</option>
+      <option value="전기/전자 부품" {% if category=='전기/전자 부품' %}selected{% endif %}>⚡ 전기/전자 부품</option>
+      <option value="유지보수/기타"  {% if category=='유지보수/기타' %}selected{% endif %}>🔧 유지보수/기타</option>
+    </select>
+    {% if search or (category and category != '전체') %}
+    <a href="/products" class="btn btn-ghost btn-sm">✕ 초기화</a>
+    {% endif %}
+  </form>
+</div>
+
+<div class="row-count">
+  총 <span id="tbl-products-count">{{ items|length }}</span>건
+  {% if category != '전체' %}<span class="badge badge-blue" style="margin-left:8px;">{{ category }}</span>{% endif %}
+</div>
+
+<!-- 테이블 -->
+<div class="table-wrap">
+  <div class="table-scroll">
+    <table id="tbl-products">
+      <thead>
+        <tr>
+          <th>품목코드</th>
+          <th>품명</th>
+          <th>카테고리</th>
+          <th>규격/모델</th>
+          <th>단가</th>
+          <th>재고</th>
+          <th>단위</th>
+          <th>위치</th>
+          <th>공급처</th>
+          <th style="text-align:center;">작업</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        {% if item.quantity == 0 %}
+          {% set rc = 'row-danger' %}
+        {% elif item.quantity <= item.low_stock_alert %}
+          {% set rc = 'row-warning' %}
+        {% else %}
+          {% set rc = '' %}
+        {% endif %}
+        <tr class="{{ rc }}">
+          <td>
+            <code style="background:var(--bg);padding:2px 6px;border-radius:4px;
+                         font-size:0.78rem;color:var(--accent);">
+              {{ item.item_code or '—' }}
+            </code>
+          </td>
+          <td class="fw-600" title="{{ item.name }}">{{ item.name }}</td>
+          <td>
+            {% if item.category == '소모품' %}
+              <span class="badge badge-green">🔩 소모품</span>
+            {% elif item.category == '주요 모듈' %}
+              <span class="badge badge-blue">⚙️ 주요모듈</span>
+            {% elif item.category == '전기/전자 부품' %}
+              <span class="badge badge-amber">⚡ 전기/전자</span>
+            {% else %}
+              <span class="badge badge-purple">🔧 유지보수</span>
+            {% endif %}
+          </td>
+          <td class="text-muted" style="font-size:0.82rem;">{{ item.model_spec or '—' }}</td>
+          <td style="font-size:0.88rem;">¥{{ '{:,}'.format(item.price) }}</td>
+          <td>
+            <span class="qty-badge
+              {% if item.quantity == 0 %}qty-empty
+              {% elif item.quantity <= item.low_stock_alert %}qty-low
+              {% else %}qty-ok{% endif %}">
+              {{ item.quantity }}
+              {% if item.quantity == 0 %} ⚠️
+              {% elif item.quantity <= item.low_stock_alert %} ↓{% endif %}
+            </span>
+          </td>
+          <td class="text-muted" style="font-size:0.82rem;">{{ item.unit }}</td>
+          <td>
+            {% if item.location %}
+            <code style="background:var(--bg);padding:2px 6px;border-radius:4px;
+                         font-size:0.78rem;color:var(--text-muted);">
+              {{ item.location }}
+            </code>
+            {% else %}—{% endif %}
+          </td>
+          <td class="text-muted" style="font-size:0.82rem;">{{ item.supplier or '—' }}</td>
+          <td>
+            <div class="table-actions">
+              <button class="btn btn-ghost btn-sm btn-icon" title="수정"
+                onclick="openEditModal({{ item.id }})">✏️</button>
+              <button class="btn btn-success btn-sm" title="입고"
+                onclick="openStockModal(
+                  {{ item.id }},
+                  '{{ item.name|replace("'","\\'")|e }}',
+                  '{{ item.item_code|replace("'","\\'")|e }}',
+                  'in', {{ item.quantity }},
+                  '{{ item.unit }}')">📥</button>
+              <button class="btn btn-warning btn-sm" title="출고"
+                onclick="openStockModal(
+                  {{ item.id }},
+                  '{{ item.name|replace("'","\\'")|e }}',
+                  '{{ item.item_code|replace("'","\\'")|e }}',
+                  'out', {{ item.quantity }},
+                  '{{ item.unit }}')">📤</button>
+              <button class="btn btn-danger btn-sm btn-icon" title="삭제"
+                onclick="openDeleteModal({{ item.id }},
+                  '{{ item.name|replace("'","\\'")|e }}')">🗑</button>
+            </div>
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="10">
+            <div class="empty-state">
+              <div class="empty-icon">📭</div>
+              <p>검색 결과가 없습니다.</p>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ══ 모달: 품목 추가 / 수정 ══ -->
+<div id="modal-product" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span id="modal-product-title" class="modal-title">품목 추가</span>
+      <button class="modal-close" onclick="closeModal('modal-product')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="form-product" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">품목코드</label>
+            <input id="field-item-code" class="form-control" placeholder="예) CT-1200">
+          </div>
+          <div class="form-group">
+            <label class="form-label">카테고리 *</label>
+            <select id="field-category" class="form-control" required>
+              <option value="">선택하세요</option>
+              <option value="소모품">소모품</option>
+              <option value="주요 모듈">주요 모듈</option>
+              <option value="전기/전자 부품">전기/전자 부품</option>
+              <option value="유지보수/기타">유지보수/기타</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">품명 *</label>
+          <input id="field-name" class="form-control" placeholder="예) 컨택팁 φ1.2mm" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">규격/모델</label>
+          <input id="field-model-spec" class="form-control" placeholder="예) Panasonic YX-1200">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">단가 (¥)</label>
+            <input id="field-price" type="number" min="0" class="form-control" value="0">
+          </div>
+          <div class="form-group">
+            <label class="form-label">현재 수량</label>
+            <input id="field-quantity" type="number" min="0" class="form-control" value="0">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">단위</label>
+            <input id="field-unit" class="form-control" placeholder="개 / 릴 / 세트" value="개">
+          </div>
+          <div class="form-group">
+            <label class="form-label">최소재고수량</label>
+            <input id="field-low-stock" type="number" min="0" class="form-control" value="10">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">보관위치</label>
+            <input id="field-location" class="form-control" placeholder="예) A-01-1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">공급처</label>
+            <input id="field-supplier" class="form-control" placeholder="예) 파나소닉코리아">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-product')">취소</button>
+      <button id="btn-save-product" class="btn btn-primary" onclick="submitProduct()">저장</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 모달: 삭제 확인 ══ -->
+<div id="modal-delete" class="modal-overlay">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <span class="modal-title text-red">🗑 삭제 확인</span>
+      <button class="modal-close" onclick="closeModal('modal-delete')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.9rem;line-height:1.7;">
+        <strong id="delete-product-name" class="text-red"></strong> 품목을 삭제하시겠습니까?<br>
+        <span class="text-muted" style="font-size:0.82rem;">삭제된 데이터는 복구할 수 없습니다.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-delete')">취소</button>
+      <button id="btn-confirm-delete" class="btn btn-danger" onclick="confirmDelete()">삭제</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 모달: 입고 / 출고 ══ -->
+<div id="modal-stock" class="modal-overlay">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <span id="stock-modal-title" class="modal-title">입출고</span>
+      <button class="modal-close" onclick="closeModal('modal-stock')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p id="stock-current-qty" class="text-muted"
+         style="font-size:0.85rem;margin-bottom:14px;"></p>
+      <div class="form-group">
+        <label class="form-label">처리 수량 *</label>
+        <input id="stock-qty" type="number" min="1" class="form-control"
+               placeholder="수량 입력">
+      </div>
+      <div class="form-group">
+        <label class="form-label">비고 (거래처/목적 등)</label>
+        <input id="stock-note" type="text" class="form-control"
+               placeholder="예) A사 납품, 정기 발주, 로봇 수리 등">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-stock')">취소</button>
+      <button id="btn-stock-confirm" class="btn btn-success"
+              onclick="confirmStock()">처리</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 모달: 엑셀 가져오기 ══ -->
+<div id="modal-import" class="modal-overlay">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <span class="modal-title">📥 엑셀 파일 가져오기</span>
+      <button class="modal-close" onclick="closeModal('modal-import')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.85rem;line-height:1.6;margin-bottom:14px;" class="text-muted">
+        업로드할 엑셀 파일(.xlsx, .xls)을 선택해 주세요.<br>
+        <span class="text-red fw-600" style="color:var(--danger);font-weight:600;">※ 가져오기 진행 시 기존 재고 데이터는 모두 지워지고 엑셀 데이터로 덮어쓰기됩니다.</span>
+      </p>
+      <div class="form-group">
+        <label class="form-label">엑셀 파일 선택 *</label>
+        <input id="import-file" type="file" accept=".xlsx, .xls" class="form-control" style="padding:6px; background:var(--bg); border:1px solid var(--border); color:var(--text); border-radius:4px; width:100%; box-sizing:border-box;">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-import')">취소</button>
+      <button id="btn-import-confirm" class="btn btn-success" onclick="confirmImport()">업로드 및 등록</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 모달: 단가 업데이트 ══ -->
+<div id="modal-price-update" class="modal-overlay">
+  <div class="modal-box modal-sm">
+    <div class="modal-header">
+      <span class="modal-title">💰 단가 일괄 업데이트</span>
+      <button class="modal-close" onclick="closeModal('modal-price-update')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.85rem;line-height:1.6;margin-bottom:14px;" class="text-muted">
+        업로드할 가격표 엑셀 파일(.xlsx, .xls)을 선택해 주세요.<br>
+        현재 등록되어 있는 품목 중 <strong>품목코드(item_code)</strong>가 일치하는 상품의 단가만 업데이트됩니다.
+      </p>
+      <div class="form-group">
+        <label class="form-label">가격표 엑셀 파일 선택 *</label>
+        <input id="price-update-file" type="file" accept=".xlsx, .xls" class="form-control" style="padding:6px; background:var(--bg); border:1px solid var(--border); color:var(--text); border-radius:4px; width:100%; box-sizing:border-box;">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-price-update')">취소</button>
+      <button id="btn-price-update-confirm" class="btn btn-warning" onclick="confirmPriceUpdate()">업로드 및 업데이트</button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// 품목 CRUD 및 입출고 — products 페이지 전용
+var _editingId = null, _deleteId = null, _stockId = null, _stockType = null;
+
+function openAddModal() {
+  _editingId = null;
+  document.getElementById('modal-product-title').textContent = '➕ 품목 추가';
+  ['field-item-code','field-name','field-model-spec',
+   'field-location','field-supplier'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('field-category').value = '';
+  document.getElementById('field-price').value    = '0';
+  document.getElementById('field-quantity').value = '0';
+  document.getElementById('field-unit').value     = '개';
+  document.getElementById('field-low-stock').value= '10';
+  openModal('modal-product');
+}
+
+async function openEditModal(pid) {
+  _editingId = pid;
+  document.getElementById('modal-product-title').textContent = '✏️ 품목 수정';
+  const data = await api(`/api/product/${pid}`);
+  if (!data.success) { showToast('데이터를 불러올 수 없습니다.', 'error'); return; }
+  const p = data.product;
+  document.getElementById('field-item-code').value  = p.item_code   || '';
+  document.getElementById('field-name').value       = p.name;
+  document.getElementById('field-category').value   = p.category;
+  document.getElementById('field-model-spec').value = p.model_spec  || '';
+  document.getElementById('field-price').value      = p.price;
+  document.getElementById('field-quantity').value   = p.quantity;
+  document.getElementById('field-unit').value       = p.unit;
+  document.getElementById('field-low-stock').value  = p.low_stock_alert;
+  document.getElementById('field-location').value   = p.location    || '';
+  document.getElementById('field-supplier').value   = p.supplier    || '';
+  openModal('modal-product');
+}
+
+async function submitProduct() {
+  const body = {
+    item_code:       document.getElementById('field-item-code').value.trim(),
+    name:            document.getElementById('field-name').value.trim(),
+    category:        document.getElementById('field-category').value.trim(),
+    model_spec:      document.getElementById('field-model-spec').value.trim(),
+    price:           parseInt(document.getElementById('field-price').value)    || 0,
+    quantity:        parseInt(document.getElementById('field-quantity').value)  || 0,
+    unit:            document.getElementById('field-unit').value.trim() || '개',
+    low_stock_alert: parseInt(document.getElementById('field-low-stock').value) || 10,
+    location:        document.getElementById('field-location').value.trim(),
+    supplier:        document.getElementById('field-supplier').value.trim(),
+  };
+  if (!body.name || !body.category) {
+    showToast('품명과 카테고리는 필수입니다.', 'error'); return;
+  }
+  setLoading('btn-save-product', true);
+  const res = _editingId
+    ? await api(`/api/product/${_editingId}`, 'PUT', body)
+    : await api('/api/product', 'POST', body);
+  setLoading('btn-save-product', false);
+  if (res.success) {
+    showToast(res.message, 'success');
+    closeModal('modal-product');
+    setTimeout(() => location.reload(), 700);
+  } else {
+    showToast(res.message || '오류가 발생했습니다.', 'error');
+  }
+}
+
+function openDeleteModal(pid, name) {
+  _deleteId = pid;
+  document.getElementById('delete-product-name').textContent = name;
+  openModal('modal-delete');
+}
+
+async function confirmDelete() {
+  if (!_deleteId) return;
+  setLoading('btn-confirm-delete', true);
+  const res = await api(`/api/product/${_deleteId}`, 'DELETE');
+  setLoading('btn-confirm-delete', false);
+  if (res.success) {
+    showToast(res.message, 'success');
+    closeModal('modal-delete');
+    setTimeout(() => location.reload(), 700);
+  } else { showToast(res.message, 'error'); }
+}
+
+function openStockModal(pid, name, code, type, currentQty, unit) {
+  _stockId = pid; _stockType = type;
+  const isIn = type === 'in';
+  document.getElementById('stock-modal-title').textContent =
+    isIn ? `📥 입고 — [${code}] ${name}` : `📤 출고 — [${code}] ${name}`;
+  document.getElementById('stock-current-qty').textContent =
+    `현재 재고: ${currentQty} ${unit}`;
+  document.getElementById('stock-qty').value  = '';
+  document.getElementById('stock-note').value = '';
+  document.getElementById('btn-stock-confirm').className =
+    `btn ${isIn ? 'btn-success' : 'btn-danger'}`;
+  document.getElementById('btn-stock-confirm').textContent =
+    isIn ? '입고 처리' : '출고 처리';
+  openModal('modal-stock');
+}
+
+async function confirmStock() {
+  const qty  = parseInt(document.getElementById('stock-qty').value);
+  const note = document.getElementById('stock-note').value.trim();
+  if (!qty || qty <= 0) { showToast('수량을 올바르게 입력해 주세요.', 'error'); return; }
+  setLoading('btn-stock-confirm', true);
+  const res = await api(`/api/product/${_stockId}/stock-${_stockType}`, 'POST',
+                        { quantity: qty, note });
+  setLoading('btn-stock-confirm', false);
+  if (res.success) {
+    showToast(res.message, 'success');
+    closeModal('modal-stock');
+    setTimeout(() => location.reload(), 700);
+  } else { showToast(res.message, 'error'); }
+}
+
+function openImportModal() {
+  document.getElementById('import-file').value = '';
+  openModal('modal-import');
+}
+
+async function confirmImport() {
+  const fileInput = document.getElementById('import-file');
+  if (fileInput.files.length === 0) {
+    showToast('업로드할 엑셀 파일을 선택해 주세요.', 'error');
+    return;
+  }
+  
+  const formData = new FormData();
+  formData.append('file', fileInput.files[0]);
+  
+  setLoading('btn-import-confirm', true);
+  try {
+    const response = await fetch('/api/product/import-excel', {
+      method: 'POST',
+      body: formData
+    });
+    const res = await response.json();
+    setLoading('btn-import-confirm', false);
+    if (res.success) {
+      showToast(res.message, 'success');
+      closeModal('modal-import');
+      setTimeout(() => location.reload(), 1000);
+    } else {
+      showToast(res.message || '오류가 발생했습니다.', 'error');
+    }
+  } catch (err) {
+    setLoading('btn-import-confirm', false);
+    showToast('서버 통신 중 오류가 발생했습니다.', 'error');
+  }
+}
+
+function openPriceUpdateModal() {
+  document.getElementById('price-update-file').value = '';
+  openModal('modal-price-update');
+}
+
+async function confirmPriceUpdate() {
+  const fileInput = document.getElementById('price-update-file');
+  if (fileInput.files.length === 0) {
+    showToast('업로드할 가격표 엑셀 파일을 선택해 주세요.', 'error');
+    return;
+  }
+  
+  const formData = new FormData();
+  formData.append('file', fileInput.files[0]);
+  
+  setLoading('btn-price-update-confirm', true);
+  try {
+    const response = await fetch('/api/product/update-prices-excel', {
+      method: 'POST',
+      body: formData
+    });
+    const res = await response.json();
+    setLoading('btn-price-update-confirm', false);
+    if (res.success) {
+      showToast(res.message, 'success');
+      closeModal('modal-price-update');
+      setTimeout(() => location.reload(), 1000);
+    } else {
+      showToast(res.message || '오류가 발생했습니다.', 'error');
+    }
+  } catch (err) {
+    setLoading('btn-price-update-confirm', false);
+    showToast('서버 통신 중 오류가 발생했습니다.', 'error');
+  }
+}
+</script>
+{% endblock %}
