@@ -3,20 +3,23 @@
 ■ 홈페이지
 https://www.shm21.kr
 
-■ 코드 저장소 (여기 권한이 가장 중요)
+■ 코드 저장소
 https://github.com/jwonrt-beep/sehan
 
-■ 어떻게 반영되나요?
-파일 수정 → GitHub에 push → 자동으로 홈페이지에 배포 (1~3분)
+■ 받는 분이 먼저 준비할 것
+1) https://github.com 에서 무료 가입
+2) GitHub 아이디(또는 가입 이메일)를 넘기는 분에게 알려주기
 
-■ 꼭 넘겨받을 권한
-1) GitHub 저장소 Write 또는 Admin
-2) 도메인(www.shm21.kr) 등록 계정 + DNS (전권일 때)
+■ 넘기는 분이 할 일
+1) 위 저장소 → Settings → Collaborators → Add people
+2) 받는 분 아이디로 초대 (Write 또는 Admin)
+3) 받는 분에게 “초대 수락해 주세요” 안내
 
-■ 자세한 설명
-저장소 안 docs/HANDOVER.md 파일을 읽어 주세요.
-이미지 넣는 위치, 수정할 파일, 체크리스트가 모두 있습니다.
+■ 받는 분이 할 일
+1) 이메일 또는 GitHub 알림에서 초대 수락
+2) 저장소가 열리면 권한 받은 것
+3) 자세한 설명은 저장소 파일 docs/HANDOVER.md
 
-■ 제품 사진 / 갤러리
-메뉴「제품 및 시스템」페이지 하단에「실제 설비 및 적용 이미지」
-파일 위치: assets/images/products/panasonic/
+■ 전권일 때 추가
+도메인 www.shm21.kr 등록 업체 계정도 함께 전달
+(GitHub만 있으면 내용 수정은 가능, 주소/DNS는 도메인 계정 필요)
