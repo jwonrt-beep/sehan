@@ -1,0 +1,22 @@
+[세한메카트로닉스 홈페이지 인수인계]
+
+■ 홈페이지
+https://www.shm21.kr
+
+■ 코드 저장소 (여기 권한이 가장 중요)
+https://github.com/jwonrt-beep/sehan
+
+■ 어떻게 반영되나요?
+파일 수정 → GitHub에 push → 자동으로 홈페이지에 배포 (1~3분)
+
+■ 꼭 넘겨받을 권한
+1) GitHub 저장소 Write 또는 Admin
+2) 도메인(www.shm21.kr) 등록 계정 + DNS (전권일 때)
+
+■ 자세한 설명
+저장소 안 docs/HANDOVER.md 파일을 읽어 주세요.
+이미지 넣는 위치, 수정할 파일, 체크리스트가 모두 있습니다.
+
+■ 제품 사진 / 갤러리
+메뉴「제품 및 시스템」페이지 하단에「실제 설비 및 적용 이미지」
+파일 위치: assets/images/products/panasonic/
