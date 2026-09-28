@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디버링 자동화 | 세한메카트로닉스</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">세한<span>메카트로닉스</span></a>
+      <button class="nav-toggle" aria-label="메뉴">☰</button>
+      <nav class="nav">
+        <a href="index.html">솔루션</a>
+        <a href="../cases.html">설치사례</a>
+        <a href="../maintenance.html">유지보수</a>
+        <a href="../education.html">교육</a>
+        <a href="../company.html">회사소개</a>
+        <a href="../contact.html" class="cta">문의하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>디버링 자동화</h1>
+      <p>다듬질·버 조각 제거 공정 자동화</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="detail-section">
+        <h2>어떤 제조 문제가 반복됐는가</h2>
+        <p>다듬질·버 조각 제거 작업의 반복성, 작업자 피로, 품질 편차, 처리량 한계 등이 현장 과제입니다.</p>
+      </div>
+      <div class="detail-section">
+        <h2>기존 방식의 한계</h2>
+        <p>수작업 디버링은 작업자 숙련도에 의존하며, 형상·재질에 따른 일관성 확보가 어렵습니다.</p>
+      </div>
+      <div class="detail-section">
+        <h2>세한의 로봇 적용 방식</h2>
+        <p>형상·재질에 맞는 공구 선택과 경로 설계. 지그·치구로 고정 후 반복 작업 자동화.</p>
+      </div>
+      <div class="detail-section">
+        <h2>현장에서 달라진 점</h2>
+        <p>처리량 증대, 품질 균일화, 작업자당 관리 가능 대수 증가.</p>
+      </div>
+      <p style="text-align: center; margin-top: 48px;">
+        <a href="../cases.html?공정=디버링" class="btn" style="display: inline-block; padding: 14px 32px; background: var(--color-accent); color: #fff; text-decoration: none; font-weight: 600; border-radius: 8px;">디버링 설치사례 보기</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">다른 솔루션</h2>
+      <div class="solution-list">
+        <a href="용접자동화.html" class="solution-item">
+          <h3>로봇 용접 자동화</h3>
+          <p>스폿·아크·레이저 용접 등</p>
+        </a>
+        <a href="핸들링.html" class="solution-item">
+          <h3>핸들링·이송 자동화</h3>
+          <p>자재 이송·적재·피킹 등</p>
+        </a>
+        <a href="팔레타이징.html" class="solution-item">
+          <h3>팔레타이징 자동화</h3>
+          <p>적재·적층·출고 등</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="brand"><h4>세한메카트로닉스</h4><p>경기도 시흥시 공단1대로 144 A108동<br>담당: 성지훈 010-4047-9030</p></div>
+        <div class="links"><h4>바로가기</h4><a href="index.html">솔루션</a><a href="../cases.html">설치사례</a><a href="../maintenance.html">유지보수</a><a href="../contact.html">문의</a></div>
+      </div>
+      <div class="footer-bottom">© (주)세한메카트로닉스.</div>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.nav-toggle')?.addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,659 @@
+/* ============================================
+   세한메카트로닉스 — 제품 쇼케이스 페이지
+   Industrial catalog · Image-first · Deep navy
+   ============================================ */
+
+.sehan-products-page {
+  --sehan-white: #FFFFFF;
+  --sehan-navy: #071A2F;
+  --sehan-navy-mid: #0B1F36;
+  --sehan-accent: #1F6FEB;
+  --sehan-text: #0B1F36;
+  --sehan-text-muted: #5B677A;
+  --sehan-bg-gray: #F0F3F7;
+  --sehan-line: #E1E7EF;
+  background: var(--sehan-white);
+  color: var(--sehan-text);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* 한글 단어 중간 줄바꿈 방지 */
+.sehan-keep {
+  white-space: nowrap;
+}
+
+/* 모바일에서만 의도적 줄바꿈 */
+.sehan-br-sm {
+  display: none;
+}
+
+/* ---------- Shared ---------- */
+.sehan-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.sehan-section {
+  padding: 72px 0;
+}
+
+.sehan-section-head {
+  margin-bottom: 40px;
+}
+
+.sehan-section-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sehan-accent);
+  margin-bottom: 14px;
+}
+
+.sehan-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.625rem);
+  font-weight: 700;
+  color: var(--sehan-text);
+  margin: 0 0 14px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.sehan-section-desc {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--sehan-text-muted);
+  max-width: 640px;
+}
+
+.sehan-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--sehan-navy-mid);
+  border: 1px solid var(--sehan-line);
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.sehan-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sehan-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.sehan-image-wrap {
+  overflow: hidden;
+}
+
+.sehan-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- 1. Dark Hero ---------- */
+.sehan-hero {
+  background: var(--sehan-navy);
+  color: #fff;
+  padding: 64px 0 0;
+  overflow: hidden;
+}
+
+.sehan-hero-inner {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 0;
+  align-items: stretch;
+  min-height: 520px;
+}
+
+.sehan-hero-copy {
+  padding: 48px 48px 56px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sehan-hero .sehan-section-label {
+  color: rgba(31, 111, 235, 0.95);
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+}
+
+.sehan-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.125rem, 4.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.sehan-hero-title-line {
+  display: block;
+}
+
+.sehan-hero-sub {
+  margin: 0 0 12px;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.sehan-hero-note {
+  margin: 0 0 36px;
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.sehan-hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.sehan-btn-primary {
+  background: var(--sehan-accent);
+  color: #fff;
+  border-color: var(--sehan-accent);
+}
+
+.sehan-btn-primary:hover {
+  background: #1858c4;
+  border-color: #1858c4;
+}
+
+.sehan-btn-outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.sehan-btn-outline:hover {
+  border-color: #fff;
+}
+
+.sehan-hero-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 28px;
+}
+
+.sehan-hero-spec {
+  padding-right: 20px;
+}
+
+.sehan-hero-spec-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--sehan-accent);
+  margin-bottom: 6px;
+}
+
+.sehan-hero-spec-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sehan-hero-spec-value {
+  display: block;
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.sehan-hero-visual {
+  position: relative;
+  min-height: 400px;
+}
+
+.sehan-hero-visual .sehan-image-wrap {
+  height: 100%;
+  min-height: 400px;
+}
+
+.sehan-hero-visual .sehan-image-wrap img {
+  min-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sehan-hero-visual:not(:has(.sehan-image-wrap)) {
+  display: none;
+}
+
+.sehan-hero-inner:has(.sehan-hero-visual:not(:has(.sehan-image-wrap))) {
+  grid-template-columns: 1fr;
+}
+
+.sehan-hero-inner:has(.sehan-hero-visual:not(:has(.sehan-image-wrap))) .sehan-hero-copy {
+  padding-right: 0;
+}
+
+/* ---------- 2. Process panels ---------- */
+.sehan-process {
+  background: var(--sehan-white);
+}
+
+.sehan-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--sehan-line);
+}
+
+.sehan-process-panel {
+  padding: 32px 28px 36px;
+  border-right: 1px solid var(--sehan-line);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.sehan-process-panel:last-child {
+  border-right: none;
+}
+
+.sehan-process-panel:hover {
+  background: #FAFBFD;
+  box-shadow: inset 0 0 0 2px var(--sehan-navy-mid);
+}
+
+.sehan-process-panel h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+  color: var(--sehan-text);
+  line-height: 1.25;
+}
+
+.sehan-process-panel p {
+  margin: 0 0 20px;
+  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  line-height: 1.55;
+  color: var(--sehan-text-muted);
+}
+
+.sehan-process-panel .sehan-tag {
+  font-size: 0.8125rem;
+}
+
+/* ---------- 3. Series lineup ---------- */
+.sehan-series {
+  background: var(--sehan-bg-gray);
+}
+
+.sehan-series-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.sehan-series-visual .sehan-image-wrap {
+  border: 1px solid var(--sehan-line);
+  background: var(--sehan-white);
+}
+
+.sehan-series-visual .sehan-image-wrap img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.sehan-series-visual:not(:has(.sehan-image-wrap)) {
+  display: none;
+}
+
+.sehan-series-layout:not(:has(.sehan-series-visual .sehan-image-wrap)) {
+  grid-template-columns: 1fr;
+}
+
+.sehan-series-content .sehan-section-desc {
+  margin-bottom: 24px;
+}
+
+.sehan-series-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--sehan-line);
+  background: var(--sehan-white);
+}
+
+.sehan-series-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.sehan-series-table thead {
+  background: var(--sehan-navy-mid);
+  color: #fff;
+}
+
+.sehan-series-table th,
+.sehan-series-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--sehan-line);
+}
+
+.sehan-series-table th {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
+}
+
+.sehan-series-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.sehan-series-table td:first-child {
+  font-weight: 700;
+  color: var(--sehan-navy-mid);
+}
+
+/* ---------- 4. Showcase ---------- */
+.sehan-showcase {
+  background: var(--sehan-white);
+}
+
+.sehan-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sehan-photo-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--sehan-line);
+  background: var(--sehan-white);
+  overflow: hidden;
+}
+
+.sehan-photo-card-visual {
+  flex: 0 0 68%;
+  min-height: 220px;
+}
+
+.sehan-photo-card-visual .sehan-image-wrap {
+  height: 100%;
+  min-height: 220px;
+}
+
+.sehan-photo-card-visual .sehan-image-wrap img {
+  min-height: 220px;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.sehan-photo-card:not(:has(.sehan-image-wrap)) .sehan-photo-card-visual {
+  display: none;
+}
+
+.sehan-photo-card-body {
+  padding: 22px 22px 26px;
+  flex: 1;
+}
+
+.sehan-photo-card-body h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-weight: 700;
+  color: var(--sehan-text);
+  line-height: 1.3;
+}
+
+.sehan-photo-card-body p {
+  margin: 0 0 16px;
+  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  line-height: 1.55;
+  color: var(--sehan-text-muted);
+}
+
+/* ---------- 5. Finale (config + gallery + CTA) ---------- */
+.sehan-finale {
+  background: var(--sehan-bg-gray);
+  padding-bottom: 80px;
+}
+
+.sehan-finale-config {
+  margin-bottom: 56px;
+}
+
+.sehan-finale-config .sehan-image-wrap {
+  border: 1px solid var(--sehan-line);
+  background: var(--sehan-white);
+  margin-bottom: 24px;
+}
+
+.sehan-finale-config .sehan-image-wrap img {
+  aspect-ratio: 21 / 9;
+  object-fit: contain;
+  background: var(--sehan-white);
+}
+
+.sehan-finale-config:not(:has(.sehan-image-wrap)) {
+  margin-bottom: 40px;
+}
+
+.sehan-finale-gallery-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--sehan-text);
+  margin: 0 0 28px;
+  letter-spacing: -0.02em;
+}
+
+.sehan-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 56px;
+}
+
+.sehan-gallery-item {
+  overflow: hidden;
+  border: 1px solid var(--sehan-line);
+  background: var(--sehan-white);
+}
+
+.sehan-gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.sehan-cta {
+  background: var(--sehan-navy);
+  padding: 52px 48px;
+  text-align: center;
+}
+
+.sehan-cta h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.125rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sehan-cta p {
+  margin: 0 auto 28px;
+  max-width: 580px;
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.sehan-cta .sehan-btn-primary {
+  background: var(--sehan-accent);
+  border-color: var(--sehan-accent);
+  font-size: 1.0625rem;
+  padding: 18px 36px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .sehan-hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .sehan-hero-copy {
+    padding: 40px 0 32px;
+  }
+
+  .sehan-hero-visual {
+    margin: 0 -32px;
+    min-height: 320px;
+  }
+
+  .sehan-hero-visual .sehan-image-wrap,
+  .sehan-hero-visual .sehan-image-wrap img {
+    min-height: 320px;
+  }
+
+  .sehan-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sehan-process-panel:nth-child(2) {
+    border-right: none;
+  }
+
+  .sehan-process-panel:nth-child(1),
+  .sehan-process-panel:nth-child(2) {
+    border-bottom: 1px solid var(--sehan-line);
+  }
+
+  .sehan-series-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sehan-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sehan-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sehan-br-sm {
+    display: block;
+  }
+
+  .sehan-container {
+    padding: 0 20px;
+  }
+
+  .sehan-section {
+    padding: 52px 0;
+  }
+
+  .sehan-hero {
+    padding: 40px 0 0;
+  }
+
+  .sehan-hero-specs {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sehan-hero-spec {
+    padding-right: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .sehan-hero-spec:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .sehan-hero-btns {
+    flex-direction: column;
+  }
+
+  .sehan-hero-btns .sehan-btn {
+    width: 100%;
+  }
+
+  .sehan-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sehan-process-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--sehan-line);
+  }
+
+  .sehan-process-panel:last-child {
+    border-bottom: none;
+  }
+
+  .sehan-showcase-grid,
+  .sehan-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .sehan-cta {
+    padding: 40px 24px;
+  }
+
+  .sehan-cta .sehan-btn {
+    width: 100%;
+  }
+
+  .sehan-finale-config .sehan-image-wrap img {
+    aspect-ratio: 16 / 10;
+  }
+}

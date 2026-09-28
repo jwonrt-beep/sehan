@@ -10,3 +10,17 @@ backups/
 .ai_config
 inventory.zip
 로봇제어/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
