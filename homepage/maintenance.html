@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유지보수 | 세한메카트로닉스</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">세한<span>메카트로닉스</span></a>
+      <button class="nav-toggle" aria-label="메뉴">☰</button>
+      <nav class="nav">
+        <a href="solutions/index.html">솔루션</a>
+        <a href="cases.html">설치사례</a>
+        <a href="maintenance.html">유지보수</a>
+        <a href="education.html">교육</a>
+        <a href="company.html">회사소개</a>
+        <a href="contact.html" class="cta">문의하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>유지보수</h1>
+      <p>고장 시 누가, 얼마나 빨리 — 세한이 책임집니다</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container" style="max-width: 800px;">
+      <!-- 1. 대응 프로세스 -->
+      <div class="detail-section">
+        <h2>1. 대응 프로세스 (고장 발생 시)</h2>
+        <ul class="flow-steps">
+          <li>
+            <span class="num">1</span>
+            <span><strong>고장 접수</strong> — 전화·이메일로 접수</span>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <span><strong>현황 파악</strong> — 원격 진단 또는 현장 방문 결정</span>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <span><strong>현장 출동 / 원격 조치</strong> — 24~48시간 내 현장 출동 (지역별 상이)</span>
+          </li>
+          <li>
+            <span class="num">4</span>
+            <span><strong>조치 완료</strong> — 원인 파악 및 수리, 고객 확인</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. 현장 방문 기준 -->
+      <div class="detail-section">
+        <h2>2. 현장 방문 기준</h2>
+        <p><strong>수도권 (시흥 거점 기준)</strong>: 접수 후 24~48시간 내 출동</p>
+        <p><strong>충청권 (천안 거점 기준)</strong>: 접수 후 24~48시간 내 출동</p>
+        <p><strong>기타 지방</strong>: 48~72시간 (거리·교통 상황에 따라 상이)</p>
+        <p>긴급 고장(생산 중단 등)은 별도 협의 후 우선 대응합니다.</p>
+      </div>
+
+      <!-- 3. 소모품·부품 대응 방식 -->
+      <div class="detail-section">
+        <h2>3. 소모품·부품</h2>
+        <p><strong>표준 소모품</strong> (토치 노즐, 와이어, 가스 등): 재고 보유. 신속 공급 가능.</p>
+        <p><strong>특수 부품</strong>: 발주 후 1~2주 (제품별 상이). 정기 점검 시 소모품 확인을 포함해 미리 점검합니다.</p>
+      </div>
+
+      <!-- 4. 예방 점검 가능 여부 -->
+      <div class="detail-section">
+        <h2>4. 예방 점검 (정기 점검)</h2>
+        <p>분기별 또는 반기별 예방 점검 가능합니다.</p>
+        <p><strong>점검 항목</strong>: 용접 토치, 케이블, 가스 라인, 전극 마모, 그리퍼·센서 동작, 볼트 체결 상태 등.</p>
+        <p>사고 전에 막는 것이 목표입니다.</p>
+      </div>
+
+      <!-- 유지보수 문의 -->
+      <div class="maintenance-cta">
+        <h3 style="margin: 0 0 12px; color: var(--color-primary); font-family: var(--font-display);">유지보수 문의</h3>
+        <p style="margin: 0 0 20px; color: var(--color-text-muted);">계약·점검·고장 문의는 아래로 연락 주세요.</p>
+        <a href="contact.html" class="btn-inline">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="brand"><h4>세한메카트로닉스</h4><p>경기도 시흥시 공단1대로 144 A108동<br>담당: 성지훈 010-4047-9030</p></div>
+        <div class="links"><h4>바로가기</h4><a href="solutions/index.html">솔루션</a><a href="cases.html">설치사례</a><a href="maintenance.html">유지보수</a><a href="contact.html">문의</a></div>
+      </div>
+      <div class="footer-bottom">© (주)세한메카트로닉스.</div>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.nav-toggle')?.addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
