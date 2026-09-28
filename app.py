@@ -7,13 +7,15 @@ app.py — 파나소닉 용접로봇 재고관리 Flask 앱
 import socket
 from functools import wraps
 from flask import (Flask, render_template, request, redirect,
-                   url_for, session, jsonify)
+                   url_for, session, jsonify, send_from_directory)
 from werkzeug.security import check_password_hash
 import database as db
+import backup_manager
 
 app = Flask(__name__)
 app.secret_key = 'panasonic_inv_secret_2024_change_me!'
 db.init_db()  # Ensure database schema is initialized on WSGI startup (e.g. PythonAnywhere)
+backup_manager.start_scheduler()  # 자정 자동 백업 스케줄러 실행
 
 
 # ─── Auth 데코레이터 ─────────────────────────
@@ -277,9 +279,9 @@ def api_stock_in(pid):
           f"[{product['item_code']}] {product['name']}",
           before={'quantity': before_qty},
           after={'quantity': after['quantity']},
-          note=f"+{qty}{product['unit']}  {note}".strip())
+          note=f"+{qty} {note}".strip())
     return jsonify({'success': True,
-                    'message': f"입고 완료: +{qty} {product['unit']}",
+                    'message': f"입고 완료: +{qty}",
                     'new_qty': after['quantity']})
 
 
@@ -308,9 +310,9 @@ def api_stock_out(pid):
           f"[{product['item_code']}] {product['name']}",
           before={'quantity': before_qty},
           after={'quantity': after['quantity']},
-          note=f"-{qty}{product['unit']}  {note}".strip())
+          note=f"-{qty} {note}".strip())
     return jsonify({'success': True,
-                    'message': f"출고 완료: -{qty} {product['unit']}",
+                    'message': f"출고 완료: -{qty}",
                     'new_qty': after['quantity']})
 
 
@@ -321,7 +323,40 @@ def history():
     action = request.args.get('action', '')
     search = request.args.get('search', '').strip()
     raw  = db.get_audit_logs(limit=500, action_filter=action, search=search)
-    logs = [l for l in raw if l['action'] in ('STOCK_IN', 'STOCK_OUT')]
+    import json
+    logs = []
+    for l in raw:
+        if l['action'] not in ('STOCK_IN', 'STOCK_OUT'):
+            continue
+        try:
+            if l['before_data']:
+                b = json.loads(l['before_data'])
+                if isinstance(b, dict) and 'quantity' in b:
+                    l['before_data'] = b['quantity']
+        except: pass
+        try:
+            if l['after_data']:
+                a = json.loads(l['after_data'])
+                if isinstance(a, dict) and 'quantity' in a:
+                    l['after_data'] = a['quantity']
+        except: pass
+        
+        try:
+            b_qty = int(l['before_data'])
+            a_qty = int(l['after_data'])
+            diff = a_qty - b_qty
+            sign = '+' if diff > 0 else ''
+            
+            note_str = l['note']
+            if note_str.startswith('+') or note_str.startswith('-'):
+                space_idx = note_str.find(' ')
+                real_note = note_str[space_idx:].strip() if space_idx != -1 else ''
+                l['note'] = f"{sign}{diff} {real_note}".strip()
+        except:
+            pass
+        
+        logs.append(l)
+
     return render_template('history.html',
                            logs=logs,
                            action_filter=action,
@@ -511,6 +546,48 @@ def admin_audit():
                            search=search,
                            users=users,
                            active='admin_audit')
+
+
+# ─── 관리자 — DB 백업 및 이메일 설정 ───────────
+@app.route('/admin/backup')
+@login_required
+def admin_backup():
+    if session.get('role') != 'admin':
+        return redirect(url_for('dashboard'))
+    config = db.get_system_config()
+    history = db.get_backup_history(limit=50)
+    return render_template('admin_backup.html',
+                           config=config,
+                           history=history,
+                           active='admin_backup')
+
+
+@app.route('/api/admin/backup/config', methods=['POST'])
+@admin_required
+def api_save_backup_config():
+    d = request.get_json(silent=True) or {}
+    db.set_system_config(d)
+    audit('UPDATE_CONFIG', 'system', None, '백업 및 메일 설정 변경')
+    return jsonify({'success': True, 'message': '백업 및 이메일 설정이 저장되었습니다.'})
+
+
+@app.route('/api/admin/backup/run', methods=['POST'])
+@admin_required
+def api_run_backup_now():
+    d = request.get_json(silent=True) or {}
+    send_email = d.get('send_email', True)
+    res = backup_manager.run_backup(send_email=send_email)
+    audit('MANUAL_BACKUP', 'system', None, '수동 DB 백업 실행', note=res.get('message', ''))
+    return jsonify(res)
+
+
+@app.route('/admin/backup/download/<filename>')
+@admin_required
+def download_backup_file(filename):
+    file_path = backup_manager.BACKUP_DIR / filename
+    if not file_path.exists():
+        return "파일을 찾을 수 없습니다.", 404
+    return send_from_directory(backup_manager.BACKUP_DIR, filename, as_attachment=True)
 
 
 # ─── 에러 핸들러 ─────────────────────────────

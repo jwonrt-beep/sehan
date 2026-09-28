@@ -88,6 +88,21 @@ def init_db():
                 created_at  DATETIME DEFAULT (datetime('now', '+9 hours')),
                 updated_at  DATETIME DEFAULT (datetime('now', '+9 hours'))
             );
+
+            CREATE TABLE IF NOT EXISTS system_config (
+                key   TEXT PRIMARY KEY,
+                value TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS backup_history (
+                id         INTEGER PRIMARY KEY AUTOINCREMENT,
+                filename   TEXT    NOT NULL,
+                filepath   TEXT    NOT NULL,
+                filesize   INTEGER NOT NULL DEFAULT 0,
+                status     TEXT    NOT NULL,
+                message    TEXT    DEFAULT '',
+                created_at DATETIME DEFAULT (datetime('now', '+9 hours'))
+            );
         """)
 
         # 컬럼 마이그레이션 (기존 DB에 없을 경우 대비)
@@ -703,4 +718,71 @@ def delete_work_log(log_id):
         conn.commit()
     finally:
         conn.close()
+
+
+# ─── System Config & Backup History ─────────────
+DEFAULT_CONFIG = {
+    'email_provider': 'smtp',  # 'smtp', 'resend', 'brevo'
+    'api_key': '',
+    'smtp_host': 'smtp.naver.com',
+    'smtp_port': '587',
+    'smtp_user': '',
+    'smtp_pass': '',
+    'smtp_sender': '',
+    'smtp_receiver': '',
+    'smtp_use_tls': '1',
+    'auto_backup_enabled': '1',
+    'auto_backup_time': '00:00',
+}
+
+
+def get_system_config():
+    conn = get_db()
+    try:
+        rows = conn.execute("SELECT key, value FROM system_config").fetchall()
+        cfg = dict(DEFAULT_CONFIG)
+        for r in rows:
+            cfg[r['key']] = r['value']
+        return cfg
+    finally:
+        conn.close()
+
+
+def set_system_config(config_dict):
+    conn = get_db()
+    try:
+        for k, v in config_dict.items():
+            conn.execute(
+                "INSERT INTO system_config (key, value) VALUES (?, ?) "
+                "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
+                (str(k), str(v))
+            )
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def add_backup_history(filename, filepath, filesize, status, message=''):
+    conn = get_db()
+    try:
+        conn.execute(
+            """INSERT INTO backup_history (filename, filepath, filesize, status, message, created_at)
+               VALUES (?, ?, ?, ?, ?, datetime('now', '+9 hours'))""",
+            (filename, filepath, filesize, status, message)
+        )
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def get_backup_history(limit=50):
+    conn = get_db()
+    try:
+        rows = conn.execute(
+            "SELECT * FROM backup_history ORDER BY id DESC LIMIT ?", (limit,)
+        ).fetchall()
+        return [dict(r) for r in rows]
+    finally:
+        conn.close()
+
 

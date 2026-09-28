@@ -1,0 +1,5 @@
+# config.yaml – 3D 로봇 구현 옵션
+library: moderngl+pyglet
+detail: detailed
+animation: dynamic
+output: realtime_viewer

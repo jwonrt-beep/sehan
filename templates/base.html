@@ -42,6 +42,9 @@
     <a href="/admin/audit" class="nav-item {% if active=='admin_audit' %}active{% endif %}">
       <span class="nav-icon">📝</span> 감사 로그
     </a>
+    <a href="/admin/backup" class="nav-item {% if active=='admin_backup' %}active{% endif %}">
+      <span class="nav-icon">💾</span> DB 백업/메일
+    </a>
     {% endif %}
   </nav>
 
@@ -99,6 +102,9 @@
   </a>
   <a href="/admin/audit" class="bottom-nav-item {% if active=='admin_audit' %}active{% endif %}">
     <span class="nav-icon">📝</span><small>로그</small>
+  </a>
+  <a href="/admin/backup" class="bottom-nav-item {% if active=='admin_backup' %}active{% endif %}">
+    <span class="nav-icon">💾</span><small>백업</small>
   </a>
   {% endif %}
 </nav>

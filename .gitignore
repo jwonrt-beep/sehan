@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+backups/
+*.pdf
+*.xlsx
+.ai_config
+inventory.zip
+로봇제어/

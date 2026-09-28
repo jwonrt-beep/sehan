@@ -11,7 +11,13 @@ from pathlib import Path
 
 WORKSPACE_DIR = Path(__file__).parent
 DB_PATH = WORKSPACE_DIR / "inventory.db"
-EXCEL_PATH = WORKSPACE_DIR / "부품가격표.xlsx"
+
+if len(sys.argv) > 1:
+    excel_filename = sys.argv[1]
+else:
+    excel_filename = "부품가격표.xlsx"
+
+EXCEL_PATH = WORKSPACE_DIR / excel_filename
 
 def main():
     if not EXCEL_PATH.exists():
