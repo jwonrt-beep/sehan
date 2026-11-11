@@ -38,3 +38,4 @@
      생성된 다운로드 주소(https://github.com/.../파일명.mp4)를 `videoUrl`에 넣거나,
   2) 구글 드라이브(무료 15GB)에 영상을 올리고 [링크가 있는 모든 사용자에게 공개] 후
      공유 링크(https://drive.google.com/file/d/.../view)를 `videoUrl`에 넣으시면 됩니다.
+
