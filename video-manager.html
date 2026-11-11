@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동영상 등록·관리 도우미 | 세한메카트로닉스</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background: #f1f5f9;
+      padding-bottom: 80px;
+    }
+    .mgr-wrap {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .mgr-header {
+      background: linear-gradient(135deg, #0a0f1a 0%, #1e3a5f 100%);
+      color: #fff;
+      padding: 32px 36px;
+      border-radius: 18px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 32px rgba(10, 15, 26, 0.15);
+    }
+    .mgr-header h1 {
+      margin: 0 0 8px;
+      font-size: 1.65rem;
+    }
+    .mgr-header p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+    }
+    .mgr-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .mgr-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .mgr-panel {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(10, 15, 26, 0.05);
+    }
+    .mgr-panel h2 {
+      margin: 0 0 18px;
+      font-size: 1.2rem;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 12px;
+    }
+    .mgr-field {
+      margin-bottom: 16px;
+    }
+    .mgr-field label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: #1e293b;
+    }
+    .mgr-field input,
+    .mgr-field select,
+    .mgr-field textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    .mgr-field textarea {
+      min-height: 76px;
+      resize: vertical;
+    }
+    .mgr-hint {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .mgr-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #1e3a5f;
+      color: #fff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .mgr-btn:hover {
+      background: #2563eb;
+    }
+    .mgr-btn.secondary {
+      background: #0f172a;
+    }
+    .mgr-btn.danger {
+      background: #dc2626;
+      padding: 6px 12px;
+      font-size: 0.82rem;
+    }
+    .mgr-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #f8fafc;
+    }
+    .mgr-list-info h4 {
+      margin: 0 0 4px;
+      font-size: 0.98rem;
+      color: #0f172a;
+    }
+    .mgr-list-info p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: #64748b;
+      word-break: break-all;
+    }
+    .mgr-code-box {
+      width: 100%;
+      height: 220px;
+      font-family: Consolas, monospace;
+      font-size: 0.82rem;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 12px;
+    }
+    .storage-guide {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+    .storage-guide strong {
+      color: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mgr-wrap">
+    <div class="mgr-header">
+      <h1>🎬 세한메카트로닉스 동영상 등록 · 관리 도우미</h1>
+      <p>산업전시회·로봇 시연 동영상이 생길 때마다 여기서 간편하게 추가하고 홈페이지에 반영할 수 있습니다.</p>
+    </div>
+
+    <div class="storage-guide">
+      <strong>💡 용량 걱정 없이 무료로 동영상 올리는 팁:</strong><br>
+      • <strong>50MB 이하 짧은 MP4 파일:</strong> <code>assets/videos/</code> 폴더에 파일을 넣고 주소란에 <code>assets/videos/파일명.mp4</code> 입력<br>
+      • <strong>용량 무제한 (고화질/긴 전시회 영상):</strong> 유튜브(YouTube)에 <strong>'일부 공개'</strong>로 무료 업로드 후 유튜브 주소(<code>https://youtu.be/...</code>)를 입력하거나, 구글 드라이브 공유 링크를 입력하면 GitHub 용량을 전혀 쓰지 않고 무제한으로 올릴 수 있습니다!
+    </div>
+
+    <div class="mgr-grid">
+      <div class="mgr-panel">
+        <h2>➕ 새 동영상 추가하기</h2>
+        <form id="add-video-form">
+          <div class="mgr-field">
+            <label for="v-title">동영상 제목 *</label>
+            <input type="text" id="v-title" required placeholder="예: 2026 스마트공장·자동화산업전 파나소닉 용접로봇 시연">
+          </div>
+          <div class="mgr-field">
+            <label for="v-cat">카테고리 분류 *</label>
+            <select id="v-cat">
+              <option value="exhibition|산업전시회">산업전시회</option>
+              <option value="welding|로봇 용접 시연">로봇 용접 시연</option>
+              <option value="handling|자동 이송 · 조립">자동 이송 · 조립</option>
+              <option value="simulation|3D 시뮬레이션">3D 시뮬레이션</option>
+            </select>
+          </div>
+          <div class="mgr-field">
+            <label for="v-date">전시회명 / 시기 태그</label>
+            <input type="text" id="v-date" placeholder="예: 2026 산업전시회 출품">
+          </div>
+          <div class="mgr-field">
+            <label for="v-url">동영상 주소 또는 파일 경로 *</label>
+            <input type="text" id="v-url" required placeholder="예: https://youtu.be/xxxx 또는 assets/videos/my-video.mp4">
+            <div class="mgr-hint">유튜브 링크, 구글드라이브 공유링크, 또는 <code>assets/videos/파일명.mp4</code> 입력</div>
+          </div>
+          <div class="mgr-field">
+            <label for="v-thumb">썸네일(표지 이미지) 경로 (선택)</label>
+            <input type="text" id="v-thumb" placeholder="비워두면 유튜브 썸네일 또는 기본 설비 사진이 자동 적용됩니다">
+          </div>
+          <div class="mgr-field">
+            <label for="v-desc">간단한 설명</label>
+            <textarea id="v-desc" placeholder="영상이 어떤 공정/전시회 시연인지 1~2줄로 적어주세요."></textarea>
+          </div>
+          <div class="mgr-field">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+              <input type="checkbox" id="v-featured" checked style="width:auto;">
+              메인 페이지(index.html)에도 대표 영상으로 노출하기
+            </label>
+          </div>
+          <button type="submit" class="mgr-btn" style="width:100%;">목록 맨 위에 영상 추가하기</button>
+        </form>
+      </div>
+
+      <div class="mgr-panel">
+        <h2>📋 현재 등록된 동영상 목록 (<span id="video-count">0</span>개)</h2>
+        <div id="mgr-video-list"></div>
+
+        <h2 style="margin-top:28px;">💾 변경사항 저장하기</h2>
+        <p class="mgr-hint" style="margin-bottom:12px;">
+          영상을 추가·삭제한 뒤 아래 <strong>[videos-data.js 파일 다운로드]</strong> 버튼을 눌러 다운로드된 파일을 홈페이지 폴더의 <code>js/videos-data.js</code>에 덮어쓰기 하시면 바로 적용됩니다.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button type="button" class="mgr-btn" id="btn-download-js">📥 videos-data.js 파일 다운로드</button>
+          <button type="button" class="mgr-btn secondary" id="btn-copy-js">📋 설정 코드 복사</button>
+          <a href="cases.html#videos" class="mgr-btn secondary" style="text-decoration:none;">🔎 홈페이지 영상 갤러리 보러가기</a>
+        </div>
+        <textarea id="generated-code" class="mgr-code-box" readonly></textarea>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/videos-data.js"></script>
+  <script>
+    (function () {
+      const videos = Array.isArray(window.SAEHAN_VIDEOS) ? window.SAEHAN_VIDEOS.slice() : [];
+      const categories = window.SAEHAN_VIDEO_CATEGORIES || [];
+
+      const listEl = document.getElementById("mgr-video-list");
+      const countEl = document.getElementById("video-count");
+      const codeEl = document.getElementById("generated-code");
+
+      function buildJsContent() {
+        return (
+          "/**\n" +
+          " * 세한메카트로닉스 — 산업전시회 및 로봇 시연 영상 데이터\n" +
+          " */\n\n" +
+          "window.SAEHAN_VIDEO_CATEGORIES = " +
+          JSON.stringify(categories, null, 2) +
+          ";\n\n" +
+          "window.SAEHAN_VIDEOS = " +
+          JSON.stringify(videos, null, 2) +
+          ";\n"
+        );
+      }
+
+      function render() {
+        countEl.textContent = videos.length;
+        listEl.innerHTML = videos
+          .map(function (v, idx) {
+            return (
+              '<div class="mgr-list-item">' +
+              '  <div class="mgr-list-info">' +
+              "    <h4>[" +
+              (v.categoryLabel || v.category) +
+              "] " +
+              v.title +
+              "</h4>" +
+              "    <p>경로: " +
+              v.videoUrl +
+              "</p>" +
+              "  </div>" +
+              '  <button type="button" class="mgr-btn danger" data-del="' +
+              idx +
+              '">삭제</button>' +
+              "</div>"
+            );
+          })
+          .join("");
+
+        codeEl.value = buildJsContent();
+      }
+
+      listEl.addEventListener("click", function (e) {
+        const btn = e.target.closest("[data-del]");
+        if (!btn) return;
+        const idx = parseInt(btn.getAttribute("data-del"), 10);
+        videos.splice(idx, 1);
+        render();
+      });
+
+      document.getElementById("add-video-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const catParts = document.getElementById("v-cat").value.split("|");
+        const newVideo = {
+          id: "video-" + Date.now(),
+          category: catParts[0],
+          categoryLabel: catParts[1],
+          title: document.getElementById("v-title").value.trim(),
+          date: document.getElementById("v-date").value.trim() || "전시 · 시연",
+          description: document.getElementById("v-desc").value.trim(),
+          videoUrl: document.getElementById("v-url").value.trim(),
+          thumbnail:
+            document.getElementById("v-thumb").value.trim() ||
+            "assets/images/products/panasonic/gallery/facility-01.jpg",
+          featured: document.getElementById("v-featured").checked
+        };
+        videos.unshift(newVideo);
+        e.target.reset();
+        document.getElementById("v-featured").checked = true;
+        render();
+        alert("목록 맨 위에 동영상이 추가되었습니다! 오른쪽 [videos-data.js 파일 다운로드]를 눌러 저장해 주세요.");
+      });
+
+      document.getElementById("btn-download-js").addEventListener("click", function () {
+        const blob = new Blob([buildJsContent()], { type: "application/javascript;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "videos-data.js";
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      document.getElementById("btn-copy-js").addEventListener("click", function () {
+        codeEl.select();
+        navigator.clipboard.writeText(codeEl.value);
+        alert("설정 코드가 클립보드에 복사되었습니다!");
+      });
+
+      render();
+    })();
+  </script>
+</body>
+
+</html>

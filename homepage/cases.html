@@ -35,8 +35,18 @@
   <section class="page-hero">
     <div class="container">
       <p class="breadcrumb"><a href="index.html">메인</a> &gt; 구축사례 / 시뮬레이션</p>
-      <h1>구축사례 / 시뮬레이션</h1>
-      <p>도입 전 검증부터 실제 구축 사례까지 — 기술적 디테일을 쉽게 이해할 수 있도록 정리했습니다.</p>
+      <h1>구축사례 / 전시회 시연 영상</h1>
+      <p>산업전시회 출품 시연 영상부터 3D 사전 시뮬레이션, 실제 현장 구축 사례까지 한눈에 확인하실 수 있습니다.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="videos">
+    <div class="container">
+      <span class="section-label">Exhibition &amp; Live Demo Videos</span>
+      <h2 class="section-title">산업전시회 및 로봇 자동화 시연 영상</h2>
+      <p class="section-desc">전시회 현장 라이브 구동 영상과 공정별 로봇 시스템 시연 영상을 클릭하여 재생해 보세요.</p>
+      <div class="video-filter-bar" id="exhibition-video-filters"></div>
+      <div class="video-grid" id="exhibition-video-grid"></div>
     </div>
   </section>
 
@@ -118,6 +128,8 @@
       <div class="footer-bottom">© 주식회사 세한메카트로닉스. All rights reserved.</div>
     </div>
   </footer>
+  <script src="js/videos-data.js"></script>
+  <script src="js/video-gallery.js"></script>
   <script>
     document.querySelector('.nav-toggle')?.addEventListener('click', function () { document.querySelector('.nav').classList.toggle('open'); });
     window.addEventListener('scroll', function () { document.getElementById('header')?.classList.toggle('scrolled', window.scrollY > 20); });
